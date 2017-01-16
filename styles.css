@@ -1,0 +1,465 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Fredericka the Great', serif;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+
+/***** Navigation Bar *****/
+
+.navigation {
+    position: relative;
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    background-color: rgba(80, 80, 80, .8);
+    z-index: 2;
+    border-bottom: 1px solid rgb(150, 150, 150);
+}
+
+.navbar > ul {
+    float: right;
+    list-style-type: none;
+    font-size: 0;
+    z-index: 1;
+}
+
+.navbar li a {
+    text-decoration: none;
+    font-size: 1.5em;
+    line-height: 60px;
+    display: block;
+    padding: 0 15px;
+    color: lightyellow;
+    font-family: 'Josefin Sans', sans-serif;
+    border-left: 1px solid rgb(150, 150, 150);
+}
+
+.navbar > ul>li {
+    display: inline-block;
+}
+
+.navbar > ul>li:last-child a {
+    border-right: 1px solid rgb(150, 150, 150);
+}
+
+.navbar > ul li li {
+    display: none;
+    float: none;
+}
+
+.navbar > ul li li a {
+    border: 1px solid rgb(150, 150, 150);
+    border-top: none;
+    height: 60px;
+}
+
+.navbar > ul li ul li:first-child a {
+    border-top: 1px solid rgb(150, 150, 150);
+}
+
+.navbar > ul ul {
+    position: absolute;
+    top: 59px;
+    background-color: rgba(80, 80, 80, .8);
+    box-shadow: -10px 20px 30px;
+}
+
+.navbar > ul li:hover li {
+    display: block;
+}
+
+.navbar li a:hover {
+    background-color: rgb(150, 6, 6);
+    box-sizing: border-box;
+    transition: .2s;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    display: block;
+    animation: pulse .7s 1;
+}
+
+.logo img {
+    max-height: 100%;
+    max-width: 100%;
+    border-radius: 30px;
+    border: 2px solid rgb(150, 150, 150);
+}
+
+.logoOffset {
+    width: 40px;
+    height: 60px;
+    float: right;
+}
+
+div.menu {
+    position: relative;
+    width: 25px;
+    height: 20px;
+    float: left;
+    margin: 20px 0 0px 17px;
+}
+
+.hamburger {
+    width: 60px;
+    height: 100%;
+    float: left;
+    transition: .2s;
+    visibility: hidden;
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger:hover {
+    background-color: rgb(150, 6, 6);
+}
+
+div.menu div.strokes {
+    width: 100%;
+    height: 3px;
+    margin: 0 0 5px 0;
+    background: lightyellow;
+    transition: transform 0.3s, opacity 0.1s;
+}
+
+.hide {
+    opacity: 0;
+    transform: translateX(-42px);
+}
+
+.animate0 {
+    transform: rotate(45deg) translateY(7px) translateX(7px);
+}
+
+.animate2 {
+    transform: rotate(-45deg) translateY(-5px) translateX(4px);
+}
+
+.dropdown {
+    position: absolute;
+    background-color: rgba(80, 80, 80, .8);
+    top: 60px;
+    width: 200px;
+    visibility: hidden;
+    opacity: 0;
+    transition: .35s;
+    box-shadow: -10px 15px 30px;
+}
+
+.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.dropdown ul li a {
+    line-height: .8em;
+    padding: .8em;
+    float: none;
+    display: block;
+    text-align: left;
+    border-bottom: 1px solid rgb(150, 150, 150);
+    border-right: 1px solid rgb(150, 150, 150);
+}
+
+.dropdown ul li {
+    position: relative;
+}
+
+.dropdown ul ul {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    height: 0px;
+}
+
+#dropdown-r+ul li a {
+    background-color: rgba(10, 10, 10, .4);
+    text-indent: 12px;
+    line-height: 0em;
+}
+
+#dropdown-r+ul li a:hover {
+    background-color: rgb(150, 6, 6);
+}
+
+#dropdown-r::after {
+    float: right;
+    content: "...";
+}
+
+#dropdown-r+.show-rsm {
+    display: block;
+    height: inherit;
+}
+
+
+/****** Content > Title *****/
+
+.title {
+    position: relative;
+    height: 700px;
+    background-image: url(Background.png);
+    min-width: 670px;
+    text-align: center;
+}
+
+.titlecontainer {
+    position: absolute;
+    top: 200px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    color: lightgoldenrodyellow;
+}
+
+.slab {
+    font-size: 9em;
+    margin-bottom: 30px;
+    font-family: 'Fredericka the Great', serif;
+    line-height: .9;
+    text-shadow: -10px 5px 15px black;
+}
+
+.script {
+    font-size: 7em;
+    font-family: Brush, cursive;
+    line-height: .8;
+    text-shadow: -5px 5px black;
+}
+
+
+/****** Content > About ******/
+
+#about {
+    padding: 50px;
+    font-family: inherit;
+    font-size: 1.7em;
+    min-width: 670px;
+    box-sizing: border-box;
+}
+
+
+/***** Content > Projects *****/
+
+#projects {
+    position: relative;
+    height: 1200px;
+    min-width: 670px;
+    background-image: url(Background.png);
+    margin: 0;
+    padding: 0;
+}
+
+#projects .project-heading {
+    color: lightgoldenrodyellow;
+    text-align: center;
+    font-size: 3em;
+}
+
+#projects .project {
+    position: absolute;
+    display: block;
+    left: 0;
+    right: 0;
+    margin: 0px auto;
+    box-sizing: border-box;
+    width: 400px;
+    height: 400px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: lightgoldenrodyellow;
+    filter: grayscale(1) blur(1px);
+    transition: .25s ease-out;
+    cursor: pointer;
+}
+
+#projects .plm {
+    background-image: url(images/production/Parking_Structure_Crop.png);
+    background-size: cover;
+}
+
+#projects .gi {
+    background-image: url(images/production/Wheat_Sharp_Crop.png);
+    background-size: cover;
+}
+
+#projects .projects-container {}
+
+#projects .project-wrapper {
+    position: relative;
+    display: inline-flex;
+    width: 100%;
+    height: 500px;
+    align-items: center;
+    justify-content: center;
+}
+
+#projects .project:hover>div {
+    font-size: 2.4em;
+    height: 90px;
+}
+
+#projects .project>div {
+    position: absolute;
+    background-color: rgba(10, 10, 10, .4);
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    text-align: center;
+    justify-content: center;
+    font-size: 2.2em;
+    transition: .25s ease-out;
+    color: lightgoldenrodyellow;
+}
+
+#projects .project:hover {
+    width: 450px;
+    height: 450px;
+    filter: grayscale(0) blur(0px);
+}
+
+
+/***** Content > Contact *****/
+
+#contact {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 80px;
+}
+
+#contact ul li {
+    display: inline-block;
+    list-style-type: none;
+    margin: 0 5px;
+    cursor: pointer;
+    float: left;
+}
+
+#contact ul li a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+}
+
+#contact ul li .media {
+    visibility: hidden;
+    position: absolute;
+    max-width: auto;
+    max-height: 40px;
+    transition: .2s linear;
+}
+
+#contact ul li .media.show {
+    visibility: visible;
+    animation: surface 1.3s linear 1 forwards;
+}
+
+#contact ul li img:hover {
+    max-height: 60px;
+    max-height: auto;
+}
+
+
+/***** Animations *****/
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(.8);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes surface {
+    0% {
+        transform: translateY(400%);
+        animation-timing-function: cubic-bezier(0, .92, .69, .99);
+    }
+    30% {
+        transform: translateY(-64%);
+        animation-timing-function: cubic-bezier(.69, .01, .99, .58);
+    }
+    50% {
+        transform: translateY(32%);
+        animation-timing-function: cubic-bezier(.01, .42, .83, 1);
+    }
+    65% {
+        transform: translateY(-32%);
+        animation-timing-function: cubic-bezier(.36, .01, 1, .83);
+    }
+    75% {
+        transform: translateY(16%);
+        animation-timing-function: cubic-bezier(0, .92, .69, .99);
+    }
+    85% {
+        transform: translateY(-8%);
+        animation-timing-function: cubic-bezier(.26, .02, .99, .66);
+    }
+    93% {
+        transform: translateY(8%);
+        animation-timing-function: cubic-bezier(0, .92, .69, .99);
+    }
+    100% {
+        transform: translateY(0%);
+        animation-timing-function: cubic-bezier(.97, .01, .99, .61);
+    }
+}
+
+
+/***** Fonts *****/
+
+@font-face {
+    font-family: Brush;
+    src: url(Brusher-Regular.ttf);
+}
+
+
+/***** Responsive Design *****/
+
+@media screen and (max-width: 719px) {
+    .navbar > ul li {
+        display: none;
+    }
+    .logo {
+        margin-left: 45%;
+    }
+    nav .hamburger {
+        display: block;
+        visibility: visible;
+    }
+}
+
+@media screen and (min-width: 720px) {
+    .logo {
+        float: left;
+        margin-left: 25px;
+    }
+    div.menu {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    #projects .project-wrapper {
+        width: 50%;
+        margin: 0 -2px;
+    }
+}

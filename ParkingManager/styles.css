@@ -1,0 +1,16 @@
+.spot {
+    cursor: pointer;
+    display: inline-block;
+    padding: .4em;
+    margin: .2em;
+    "
+
+}
+
+.spot:hover {
+    background-color: cornsilk;
+}
+
+ul li {
+    list-style: none;
+}

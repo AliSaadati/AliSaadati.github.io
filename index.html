@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Shade" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ultra" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora|Crimson+Text|Kreon" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>CSS Practice</title>
+</head>
+
+<body>
+    <nav class="navigation">
+        <div class="navbar">
+            <div class="hamburger">
+                <div class="menu">
+                    <div class="strokes"></div>
+                    <div class="strokes"></div>
+                    <div class="strokes"></div>
+                </div>
+            </div>
+            <div class="logoOffset"></div>
+            <div class="logo"><img src="as.png"> </div>
+            <ul>
+                <li> <a href="#about">About Myself</a> </li>
+                <li> <a href="#projects">Projects</a> </li>
+                <li> <a href="#">Resume</a>
+                    <ul>
+                        <li> <a href="1-14-2017%20Ali%20Saadati%20Resume.pdf">View</a> </li>
+                        <li> <a href="1-14-2017%20Ali%20Saadati%20Resume.pdf" download>Download</a></li>
+                    </ul>
+                </li>
+                <li> <a href="#contact">Contact</a> </li>
+            </ul>
+            <div class="dropdown">
+                <ul>
+                    <li> <a href="#about">About Myself</a> </li>
+                    <li> <a id="dropdown-r" href="#">Resume</a>
+                        <ul>
+                            <li> <a href="1-14-2017%20Ali%20Saadati%20Resume.pdf">View</a></li>
+                            <li> <a href="1-14-2017%20Ali%20Saadati%20Resume.pdf" download>Download</a></li>
+                        </ul>
+                    </li>
+                    <li> <a href="#projects">Projects</a> </li>
+                    <li> <a href="#contact">Contact</a> </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="title">
+        <div class="titlecontainer">
+            <div class="slab">Ali Saadati</div>
+            <div class="script">Web Design and Development</div>
+        </div>
+    </div>
+    <div id="about">
+        <p>My name is Ali Saadati and I'm a web developer currently residing in the sunny city of San Diego, CA. I have a BS in Computer Science from San Diego State University and I focus mainly on front-end web development and web design. I spend most of my day immersed in various desktops, each filled with a variety of development tools, photo editing applications, web browser tabs, media players, and the ocassional video game.</p>
+        <!--        <p>I enjoy making aesthetically pleasing websites that function just as well. I'm very curious, and am always up for a new challenge. I aspire to stay up-to-date on everything web dev and design related.</p>-->
+    </div>
+    <script src="script.js"></script>
+    <div id="projects">
+        <div class="project-heading">Projects</div>
+        <div class="projects-container">
+            <div class="project-wrapper">
+                <a href="ParkingManager/index.html">
+                    <div class="project plm">
+                        <div>Parking Lot Manager</div>
+                    </div>
+                </a>
+            </div>
+            <div class="project-wrapper">
+                <div class="project gi">
+                    <div>Gluten Identifier</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div id="contact">
+            <ul>
+                <li>
+                    <a href="http://www.facebook.com"><img class="media" src="images/Facebook_Thumb.png"></a>
+                </li>
+                <li>
+                    <a href="http://www.github.com/alisaadati"><img class="media" src="images/github_Thumb.png"></a>
+                </li>
+                <li>
+                    <a href="http://www.linkedin.com/in/alisaadati"><img class="media" src="images/Linked_In_Thumb.png"></a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>
