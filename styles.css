@@ -341,6 +341,7 @@ div.menu div.strokes {
     position: relative;
     display: flex;
     justify-content: center;
+    align-items: center;
     height: 80px;
     margin: 40px;
 }
