@@ -340,8 +340,8 @@ div.menu div.strokes {
 #contact {
     position: relative;
     height: 80px;
-    margin: 40px;
-    text-align: center;
+/*    margin: 40px;
+    */    text-align: center;
 }
 
 #contact ul li {
@@ -352,7 +352,7 @@ div.menu div.strokes {
 
 #contact ul li a {
     display: inline-flex;
-    /*    justify-content: center;*/
+    justify-content: center;
     align-items: center;
     height: 40px;
     width: 40px;
