@@ -240,14 +240,14 @@ div.menu div.strokes {
 
 /****** Content > About ******/
 
-#about {
+#about p{
     padding: 50px;
-    font-family: inherit;
-    font-size: 1.7em;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.5em;
+    line-height: 1.8;
     min-width: 670px;
     box-sizing: border-box;
 }
-
 
 /***** Content > Projects *****/
 
@@ -255,7 +255,7 @@ div.menu div.strokes {
     position: relative;
     height: 1200px;
     min-width: 670px;
-    background-image: url(Background.png);
+    background-image: url(Code_BG_nomark.jpg);
     margin: 0;
     padding: 0;
 }
@@ -264,7 +264,8 @@ div.menu div.strokes {
     color: lightgoldenrodyellow;
     text-align: center;
     line-height: 2em;
-    font-size: 3em;
+    font-size: 4em;
+    text-shadow: -3px 5px 10px black;
 }
 
 #projects .project {
@@ -343,6 +344,7 @@ div.menu div.strokes {
     display: flex;
     justify-content: center;
     height: 80px;
+    margin: 40px;
 }
 
 #contact ul li {
@@ -397,7 +399,7 @@ div.menu div.strokes {
 
 @keyframes surface {
     0% {
-        transform: translateY(400%);
+        transform: translateY(200%);
         animation-timing-function: cubic-bezier(0, .92, .69, .99);
     }
     30% {
