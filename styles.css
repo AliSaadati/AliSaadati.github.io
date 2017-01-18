@@ -339,19 +339,23 @@ div.menu div.strokes {
 
 #contact {
     position: relative;
+    display: flex;
+    justify-content: center;
     height: 80px;
-/*    margin: 40px;
-    */    text-align: center;
+    margin: 40px;
 }
 
 #contact ul li {
     display: inline-block;
-    margin: 0 4px;
+    list-style-type: none;
+    margin: 0 5px;
     cursor: pointer;
+    float: left;
 }
 
 #contact ul li a {
-    display: inline-flex;
+    position: relative;
+    display: flex;
     justify-content: center;
     align-items: center;
     height: 40px;
@@ -361,8 +365,9 @@ div.menu div.strokes {
 #contact ul li .media {
     visibility: hidden;
     position: absolute;
+    max-width: auto;
     max-height: 40px;
-    transition: .15s linear;
+    transition: .2s linear;
 }
 
 #contact ul li .media.show {
