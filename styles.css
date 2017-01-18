@@ -208,7 +208,6 @@ div.menu div.strokes {
     position: relative;
     height: 700px;
     background-image: url(Background.png);
-    min-width: 670px;
     text-align: center;
 }
 
@@ -240,21 +239,20 @@ div.menu div.strokes {
 
 /****** Content > About ******/
 
-#about p{
+#about p {
     padding: 50px;
     font-family: 'Josefin Sans', sans-serif;
     font-size: 1.5em;
     line-height: 1.8;
-    min-width: 670px;
     box-sizing: border-box;
 }
+
 
 /***** Content > Projects *****/
 
 #projects {
     position: relative;
     height: 1200px;
-    min-width: 670px;
     background-image: url(Code_BG_nomark.jpg);
     margin: 0;
     padding: 0;
@@ -443,7 +441,7 @@ div.menu div.strokes {
 
 /***** Responsive Design *****/
 
-@media screen and (max-width: 719px) {
+@media screen and (max-width: 749px) {
     .navbar > ul li {
         display: none;
     }
@@ -454,9 +452,69 @@ div.menu div.strokes {
         display: block;
         visibility: visible;
     }
+    .script {
+        font-size: 4em;
+    }
+    .slab {
+        font-size: 4.5em;
+    }
+    #projects .project {
+        position: absolute;
+        display: block;
+        left: 0;
+        right: 0;
+        margin: 0px auto;
+        box-sizing: border-box;
+        width: 300px;
+        height: 300px;
+        border-width: 3px;
+        border-style: solid;
+        border-color: lightgoldenrodyellow;
+        border-radius: 230px;
+        filter: grayscale(1) blur(1px);
+        transition: .25s ease-out;
+        cursor: pointer;
+        background-size: cover;
+        overflow: hidden;
+        align-self: center;
+        justify-content: center;
+    }
+    #projects .projects-container {
+        position: relative;
+    }
+    #projects .project-wrapper {
+        position: relative;
+        display: inline-flex;
+        width: 100%;
+        height: 400px;
+        justify-content: center;
+    }
+    #projects .project:hover>span {
+        font-size: 2.5em;
+        background-color: rgba(200, 200, 200, .4);
+    }
+    #projects .project>span {
+        position: absolute;
+        background-color: rgba(100, 100, 100, .4);
+        top: 42%;
+        left: 0;
+        right: 0;
+        width: 100%;
+        text-align: center;
+        line-height: 2em;
+        font-size: 2.2em;
+        transition: .25s ease-out;
+        color: lightgoldenrodyellow;
+        text-shadow: -1px 1px 6px black;
+    }
+    #projects .project:hover {
+        width: 350px;
+        height: 350px;
+        filter: grayscale(0) blur(0px);
+    }
 }
 
-@media screen and (min-width: 720px) {
+@media screen and (min-width: 750px) {
     .logo {
         float: left;
         margin-left: 25px;
