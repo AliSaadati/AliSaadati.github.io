@@ -345,7 +345,10 @@ div.menu div.strokes {
     margin: 40px;
 }
 
+
+/*
 #contact ul li {
+<<<<<<< HEAD
     display: inline-block;
     list-style-type: none;
     margin: 0 5px;
@@ -357,6 +360,14 @@ div.menu div.strokes {
     position: relative;
     display: flex;
     justify-content: center;
+=======
+    cursor: pointer;
+    padding: 1em;
+}
+
+#contact ul li a {
+    display: inline-block;
+>>>>>>> Responsive-Footer
     align-items: center;
     height: 40px;
     width: 40px;
@@ -379,6 +390,7 @@ div.menu div.strokes {
     max-height: 60px;
     max-height: auto;
 }
+*/
 
 
 /***** Animations *****/
@@ -511,6 +523,16 @@ div.menu div.strokes {
         width: 350px;
         height: 350px;
         filter: grayscale(0) blur(0px);
+    }
+    #contact {
+        text-align: center;
+    }
+    #contact ul li {
+        display: inline-block;
+    }
+    #contact ul li .media {
+        max-height: 40px;
+        max-width: 40px;
     }
 }
 
