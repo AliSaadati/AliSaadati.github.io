@@ -95,7 +95,7 @@
 }
 
 .logoOffset {
-    width: 40px;
+    width: 60px;
     height: 60px;
     float: right;
 }
@@ -252,7 +252,7 @@ div.menu div.strokes {
 
 #projects {
     position: relative;
-    height: 1200px;
+    height: 1000px;
     background-image: url(Code_BG_nomark.jpg);
     margin: 0;
     padding: 0;
@@ -443,7 +443,8 @@ div.menu div.strokes {
         display: none;
     }
     .logo {
-        margin-left: 45%;
+        margin-left: auto;
+        margin-right: auto;
     }
     nav .hamburger {
         display: block;
@@ -454,6 +455,9 @@ div.menu div.strokes {
     }
     .slab {
         font-size: 4.5em;
+    }
+    .title {
+        height: 600px;
     }
     #projects .project {
         width: 300px;
