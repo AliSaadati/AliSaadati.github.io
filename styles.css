@@ -226,7 +226,7 @@ div.menu div.strokes {
     margin-bottom: 30px;
     font-family: 'Fredericka the Great', serif;
     line-height: .9;
-    text-shadow: -10px 5px 15px black;
+    text-shadow: -3px 5px 1px black;
 }
 
 .script {
@@ -275,19 +275,17 @@ div.menu div.strokes {
     border-style: solid;
     border-color: lightgoldenrodyellow;
     border-radius: 230px;
+    -webkit-filter: blur(1px);
+    -webkit-transform: translate3d(0, 0, 0);
     filter: grayscale(1) blur(1px);
     transition: .15s ease-out;
     cursor: pointer;
     background-size: cover;
     overflow: hidden;
-    /*
-    align-self: center;
-    justify-content: center;
-*/
+
 }
 
 #projects .projects-container {
-    /*    position: relative;*/
 }
 
 #projects .project-wrapper {
@@ -295,14 +293,13 @@ div.menu div.strokes {
     display: inline-flex;
     width: 100%;
     height: 500px;
-    /*    justify-content: center;*/
 }
 
 #projects .project:hover>span {
     transform: scale(1.15, 1.45);
     background-color: rgba(200, 200, 200, .4);
     -webkit-filter: blur(0px);
-    /*Anti-aliasing effect*/
+/*    Anti-aliasing effect*/
 }
 
 #projects .project>span {
@@ -326,11 +323,11 @@ div.menu div.strokes {
 }
 
 #projects .plm {
-    background-image: url(images/production/Parking_Structure_Crop.png);
+    background-image: url(images/Parking_Structure-crop-right.png);
 }
 
 #projects .gi {
-    background-image: url(images/production/Wheat_Sharp_Crop.png);
+    background-image: url(images/Wheat.png);
 }
 
 

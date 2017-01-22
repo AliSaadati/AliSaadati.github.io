@@ -39,11 +39,12 @@ window.onscroll = function () {
     if ((window.innerHeight + window.scrollY) == document.body.offsetHeight && mediaShown.length < 1) {
         var footerIcons = document.querySelectorAll(".media-wrapper");
         footerIcons[0].classList.add("show-media");
-        setTimeout(function () {
-            footerIcons[1].classList.add("show-media");
-        }, 200);
-        setTimeout(function () {
-            footerIcons[2].classList.add("show-media");
-        }, 400);
+        var time = 0;
+        for (let i = 0; i < footerIcons.length; i++) {
+            setTimeout(function () {
+                footerIcons[i].classList.add("show-media");
+            }, time);
+            time = time + 200;
+        }
     }
 };
