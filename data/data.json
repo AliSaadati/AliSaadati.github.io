@@ -1,0 +1,15 @@
+{
+    "people": [{
+        "name": "Ali Saadati"
+        , "title": "Web Developer"
+        , "residence": "Imperial Beach, CA"
+}, {
+        "name": "Carlos Fernandez"
+        , "title": "Business Analyst"
+        , "residence": "Saint Augustine, FL"
+    }, {
+        "name": "David Valdivia"
+        , "title": "E-Commerce"
+        , "residence": "Imperial Beach, CA"
+   }]
+}

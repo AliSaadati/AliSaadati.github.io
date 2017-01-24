@@ -1,0 +1,14 @@
+{
+  "name": "Portfolio",
+  "version": "1.0.0",
+  "description": "Files for building a website using Node & Express",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Ali Saadati",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}

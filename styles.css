@@ -17,7 +17,7 @@
     position: fixed;
     width: 100%;
     height: 60px;
-    background-color: rgba(80, 80, 80, .8);
+    background-color: rgba(80, 80, 80, .85);
     z-index: 2;
     border-bottom: 1px solid rgb(150, 150, 150);
 }
@@ -282,11 +282,9 @@ div.menu div.strokes {
     cursor: pointer;
     background-size: cover;
     overflow: hidden;
-
 }
 
-#projects .projects-container {
-}
+#projects .projects-container {}
 
 #projects .project-wrapper {
     position: relative;
@@ -299,7 +297,7 @@ div.menu div.strokes {
     transform: scale(1.15, 1.45);
     background-color: rgba(200, 200, 200, .4);
     -webkit-filter: blur(0px);
-/*    Anti-aliasing effect*/
+    /*    Anti-aliasing effect*/
 }
 
 #projects .project>span {
