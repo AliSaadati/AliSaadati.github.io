@@ -328,6 +328,10 @@ div.menu div.strokes {
     background-image: url(images/Wheat.png);
 }
 
+#projects .it {
+    background-image: url(images/Inventory_Tracker.png);
+}
+
 
 /***** Content > Contact *****/
 
@@ -500,6 +504,15 @@ div.menu div.strokes {
 @media screen and (min-width: 900px) {
     #projects .project-wrapper {
         width: 50%;
+        margin: 0 -2px;
+    }
+}
+
+/*----- Large Desktop -----*/
+
+@media screen and (min-width: 1200px) {
+        #projects .project-wrapper {
+        width: 33%;
         margin: 0 -2px;
     }
 }
