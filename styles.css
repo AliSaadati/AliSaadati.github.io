@@ -226,7 +226,7 @@ div.menu div.strokes {
     margin-bottom: 30px;
     font-family: 'Fredericka the Great', serif;
     line-height: .9;
-    text-shadow: -3px 5px 1px black;
+    text-shadow: -3px .06em 1px black;
 }
 
 .script {
@@ -260,7 +260,7 @@ div.menu div.strokes {
     text-align: center;
     line-height: 2em;
     font-size: 4em;
-    text-shadow: -3px 5px 8px black;
+    text-shadow: -2px .07em 1px black;
 }
 
 #projects .project {
@@ -508,10 +508,11 @@ div.menu div.strokes {
     }
 }
 
+
 /*----- Large Desktop -----*/
 
-@media screen and (min-width: 1200px) {
-        #projects .project-wrapper {
+@media screen and (min-width: 1300px) {
+    #projects .project-wrapper {
         width: 33%;
         margin: 0 -2px;
     }

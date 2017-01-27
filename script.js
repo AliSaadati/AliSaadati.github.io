@@ -36,7 +36,7 @@
 })();
 window.onscroll = function () {
     var mediaShown = document.getElementsByClassName('show-media');
-    if ((window.innerHeight + window.scrollY) == document.body.offsetHeight && mediaShown.length < 1) {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight && mediaShown.length < 1) {
         var footerIcons = document.querySelectorAll(".media-wrapper");
         footerIcons[0].classList.add("show-media");
         var time = 0;

@@ -2,6 +2,7 @@ var parkingNumber = new Array();
 var timeParked = new Array();
 var timeVacant = new Array();
 var vacant = new Array();
+var set;
 
 function getData() {
     $.ajax({
@@ -25,36 +26,45 @@ function getData() {
         }
     });
 }
+var hoverSpot = document.querySelectorAll(".spot");
 window.onload = start;
-window.setInterval(changeValues, 5000);
+window.setInterval(changeValues, 3500);
 window.setInterval(updateParking, 5000);
-$(".spot").click(function () {
-    var currentId = parseInt(($(this).attr('id')) - 1);
-    if (parseInt(timeParked[currentId]) != 0) {
-        $("#parkinginfo").html("Parking spot: " + parkingNumber[currentId] + "<br>" + "Time occupied: " + timeParked[currentId]);
+window.setInterval(updateTime, 1000);
+window.addListeners(hoverSpot);
+
+function addListeners(list) {
+    for (var index = 0; index < list.length; index++) {
+        (function (i) {
+            list[i].addEventListener("mouseover", function () {
+                clearInterval(set);
+                set = setInterval(function () {
+                    var spot = i + 1;
+                    var timeV = timeVacant[i];
+                    var timeP = timeParked[i];
+                    document.querySelector(".display").classList.add("show");
+                    document.querySelector("#spotlabel").innerHTML = spot;
+                    if (vacant[i] == true) document.querySelector("#time").innerHTML = 'Vacant: ' + timeV;
+                    else document.querySelector("#time").innerHTML = 'Parked: ' + timeP;
+                }, 50);
+            }, false);
+        })(index);
     }
-    else {
-        $("#parkinginfo").html("Parking spot: " + parkingNumber[currentId] + "<br>" + "Time vacant: " + timeVacant[currentId]);
-    }
-    if (vacant[currentId]) $("#parkinginfo").append("<br> Currently Vacant")
-    else $("#parkinginfo").append("<br> Currently Occupied");
-});
+}
 
 function changeValues() {
-    timeParked = [];
-    timeVacant = [];
-    vacant = [];
-    for (let i = 0; i < parkingNumber.length; i++) {
+    for (var i = 0; i < 3; i++) {
+        var ran = (Math.floor(Math.random() * 10));
         let _vacant = (Math.floor(Math.random() * 2));
-        if (_vacant) {
-            vacant.push(true);
-            timeVacant.push(Math.floor(Math.random() * 10000)).toString();
-            timeParked.push("0");
+        if (_vacant && timeVacant[ran] == 0) {
+            timeVacant[ran] = 1;
+            timeParked[ran] = 0;
+            vacant[ran] = true;
         }
-        else {
-            vacant.push(false);
-            timeVacant.push("0");
-            timeParked.push(Math.floor(Math.random() * 10000)).toString();
+        else if (!_vacant && timeParked[ran] == 0) {
+            timeVacant[ran] = 0;
+            timeParked[ran] = 1;
+            vacant[ran] = false;
         }
     }
 }
@@ -70,6 +80,15 @@ function updateParking() {
         else $(el).css({
             'color': 'red'
         });
+    }
+}
+
+function updateTime() {
+    for (var i in timeParked) {
+        if (timeParked[i] > 0) timeParked[i]++;
+    }
+    for (var i in timeVacant) {
+        if (timeVacant[i] > 0) timeVacant[i]++;
     }
 }
 
