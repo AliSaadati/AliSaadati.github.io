@@ -57,6 +57,13 @@ function changeValues() {
         var ran = (Math.floor(Math.random() * 10));
         let _vacant = (Math.floor(Math.random() * 2));
         if (_vacant && timeVacant[ran] == 0) {
+            (function () {
+                console.log(document.getElementById(ran).firstChild);
+                document.getElementById(ran).firstChild.innerHTML = "<--- Just Added";
+                window.setTimeout(function () {
+                    document.getElementById(ran).firstChild.innerHTML = "";
+                }, 2000);
+            })();
             timeVacant[ran] = 1;
             timeParked[ran] = 0;
             vacant[ran] = true;
@@ -74,12 +81,38 @@ function updateParking() {
     for (var i = 1; el = document.getElementById(i); i++) {
         if (vacant[i - 1]) {
             $(el).css({
-                'color': 'green'
+                'color': 'rgb(0,250,0)'
             });
+            $(el).mouseover(function () {
+                $(this).css({
+                    'color': 'rgb(100,150,250)'
+                    , 'font-weight': '800'
+                });
+            })
+            $(el).mouseout(function () {
+                $(this).css({
+                    'color': 'rgb(0,250,0)'
+                    , 'font-weight': '400'
+                });
+            })
         }
-        else $(el).css({
-            'color': 'red'
-        });
+        else {
+            $(el).css({
+                'color': 'rgb(255,40,40)'
+            });
+            $(el).mouseover(function () {
+                $(this).css({
+                    'color': 'rgb(150,15,0)'
+                    , 'font-weight': '800'
+                });
+            })
+            $(el).mouseout(function () {
+                $(this).css({
+                    'color': 'rgb(255,40,40)'
+                    , 'font-weight': '400'
+                });
+            })
+        }
     }
 }
 

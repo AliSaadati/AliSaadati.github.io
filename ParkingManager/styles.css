@@ -1,3 +1,8 @@
+* {
+    color: navajowhite;
+    background-color: rgb(30, 30, 30);
+}
+
 .spot {
     cursor: pointer;
     display: inline-block;
@@ -8,8 +13,8 @@
 .display {
     visibility: hidden;
     float: right;
-    width: 10em;
-    height: 10em;
+    width: 15em;
+    height: 15em;
     transition: .5s;
 }
 
@@ -18,9 +23,7 @@
     transition: .5s;
 }
 
-.spot:hover {
-    background-color: cornsilk;
-}
+.spot:hover {}
 
 ul li {
     list-style: none;
