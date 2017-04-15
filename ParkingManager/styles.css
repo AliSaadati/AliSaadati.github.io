@@ -28,3 +28,15 @@
 ul li {
     list-style: none;
 }
+
+.spot span {
+    content: "Just opened";
+}
+
+.spot span {
+    transform: scale(0);
+}
+
+.spot span .popup {
+    transform: scale(1);
+}

@@ -29,7 +29,7 @@ function getData() {
 var hoverSpot = document.querySelectorAll(".spot");
 window.onload = start;
 window.setInterval(changeValues, 3500);
-window.setInterval(updateParking, 5000);
+window.setInterval(updateParking, 500);
 window.setInterval(updateTime, 1000);
 window.addListeners(hoverSpot);
 
@@ -55,14 +55,17 @@ function addListeners(list) {
 function changeValues() {
     for (var i = 0; i < 3; i++) {
         var ran = (Math.floor(Math.random() * 10));
+        var ranID = ran + 1;
         let _vacant = (Math.floor(Math.random() * 2));
         if (_vacant && timeVacant[ran] == 0) {
             (function () {
-                console.log(document.getElementById(ran).firstChild);
-                document.getElementById(ran).firstChild.innerHTML = "<--- Just Added";
-                window.setTimeout(function () {
-                    document.getElementById(ran).firstChild.innerHTML = "";
-                }, 2000);
+                console.log(document.getElementById(ranID).firstElementChild.classList);
+                document.getElementById(ranID).firstElementChild.classList.add("popup");
+                (function (idd) {
+                    window.setTimeout(function () {
+                        document.getElementById(idd).firstElementChild.classList.remove("popup");
+                    }, 1500);
+                })(ranID);
             })();
             timeVacant[ran] = 1;
             timeParked[ran] = 0;
