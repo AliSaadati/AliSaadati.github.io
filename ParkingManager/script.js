@@ -36,7 +36,7 @@ window.addListeners(hoverSpot);
 function addListeners(list) {
     for (var index = 0; index < list.length; index++) {
         (function (i) {
-            list[i].addEventListener("mouseover", function () {
+            list[i].addEventListener("onclick", function () {
                 clearInterval(set);
                 set = setInterval(function () {
                     var spot = i + 1;
