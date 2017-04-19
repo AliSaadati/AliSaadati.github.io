@@ -86,7 +86,7 @@ function updateParking() {
             $(el).css({
                 'color': 'rgb(0,250,0)'
             });
-            $(el).mouseover(function () {
+            $(el).onclick(function () {
                 $(this).css({
                     'color': 'rgb(100,150,250)'
                     , 'font-weight': '800'
@@ -103,7 +103,7 @@ function updateParking() {
             $(el).css({
                 'color': 'rgb(255,40,40)'
             });
-            $(el).mouseover(function () {
+            $(el).onclick(function () {
                 $(this).css({
                     'color': 'rgb(150,15,0)'
                     , 'font-weight': '800'
