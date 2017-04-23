@@ -58,5 +58,64 @@
         , "timeparked": 2905
         , "timevacant": 0
         , "vacant": false
+    },     {
+        "number": "11"
+        , "timeparked": 0
+        , "timevacant": 22406
+        , "vacant": true
+    }
+    , {
+        "number": "12"
+        , "timeparked": 136400
+        , "timevacant": 0
+        , "vacant": false
+    }
+    , {
+        "number": "13"
+        , "timeparked": 0
+        , "timevacant": 182406
+        , "vacant": true
+    }
+    , {
+        "number": "14"
+        , "timeparked": 0
+        , "timevacant": 1352445
+        , "vacant": true
+    }
+    , {
+        "number": "15"
+        , "timeparked": 2042567
+        , "timevacant": 0
+        , "vacant": false
+    }
+    , {
+        "number": "16"
+        , "timeparked": 370420
+        , "timevacant": 0
+        , "vacant": false
+    }
+    , {
+        "number": "17"
+        , "timeparked": 10987
+        , "timevacant": 0
+        , "vacant": false
+    }
+    , {
+        "number": "18"
+        , "timeparked": 765534
+        , "timevacant": 0
+        , "vacant": false
+    }
+    , {
+        "number": "19"
+        , "timeparked": 165500
+        , "timevacant": 0
+        , "vacant": false
+    }
+    , {
+        "number": "20"
+        , "timeparked": 29305
+        , "timevacant": 0
+        , "vacant": false
     }
 ]

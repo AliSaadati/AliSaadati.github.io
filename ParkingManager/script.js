@@ -36,7 +36,7 @@ window.addListeners(hoverSpot);
 function addListeners(list) {
     for (var index = 0; index < list.length; index++) {
         (function (i) {
-            list[i].addEventListener("mouseover", function () {
+            list[i].addEventListener("click", function () {
                 clearInterval(set);
                 set = setInterval(function () {
                     var spot = i + 1;
@@ -44,29 +44,53 @@ function addListeners(list) {
                     var timeP = timeParked[i];
                     document.querySelector(".display").classList.add("show");
                     document.querySelector("#spotlabel").innerHTML = spot;
-                    if (vacant[i] == true) document.querySelector("#time").innerHTML = 'Vacant: ' + timeV;
-                    else document.querySelector("#time").innerHTML = 'Parked: ' + timeP;
+                    if (vacant[i] == true) setClock(timeV);
+                    else setClock(timeP);
                 }, 50);
             }, false);
         })(index);
     }
 }
 
+
+function setClock(time) {
+    let onesSeconds = time % 10;
+    let tensSeconds = Math.floor((time % 60)/10);
+    
+    let minutes = (time/60) % 60;
+    let onesMinutes = Math.floor(minutes%10);
+    let tensMinutes = Math.floor(minutes/10);
+    
+    let hours = (time/3600) % 24;
+    let onesHours = Math.floor(hours%10);
+    let tensHours = Math.floor(hours/10);
+    
+    let days = Math.floor(time / 86400);
+    
+    document.querySelector(".o-sec").innerHTML = onesSeconds;
+    document.querySelector(".t-sec").innerHTML = tensSeconds;
+    document.querySelector(".o-min").innerHTML = onesMinutes;
+    document.querySelector(".t-min").innerHTML = tensMinutes;
+    document.querySelector(".o-hour").innerHTML = onesHours;
+    document.querySelector(".t-hour").innerHTML = tensHours;
+    document.querySelector(".days").innerHTML = days;
+
+    
+}
 function changeValues() {
     for (var i = 0; i < 3; i++) {
-        var ran = (Math.floor(Math.random() * 10));
+        var ran = (Math.floor(Math.random() * 20));
         var ranID = ran + 1;
         let _vacant = (Math.floor(Math.random() * 2));
         if (_vacant && timeVacant[ran] == 0) {
-            (function () {
-                console.log(document.getElementById(ranID).firstElementChild.classList);
-                document.getElementById(ranID).firstElementChild.classList.add("popup");
-                (function (idd) {
-                    window.setTimeout(function () {
-                        document.getElementById(idd).firstElementChild.classList.remove("popup");
-                    }, 1500);
-                })(ranID);
-            })();
+//            (function () {
+//                document.getElementById(ranID).firstElementChild.classList.add("popup");
+//                (function (idd) {
+//                    window.setTimeout(function () {
+//                        document.getElementById(idd).firstElementChild.classList.remove("popup");
+//                    }, 1500);
+//                })(ranID);
+//            })();
             timeVacant[ran] = 1;
             timeParked[ran] = 0;
             vacant[ran] = true;
@@ -86,7 +110,7 @@ function updateParking() {
             $(el).css({
                 'color': 'rgb(0,250,0)'
             });
-            $(el).mouseover(function () {
+            $(el).click(function () {
                 $(this).css({
                     'color': 'rgb(100,150,250)'
                     , 'font-weight': '800'
@@ -103,7 +127,7 @@ function updateParking() {
             $(el).css({
                 'color': 'rgb(255,40,40)'
             });
-            $(el).mouseover(function () {
+            $(el).click(function () {
                 $(this).css({
                     'color': 'rgb(150,15,0)'
                     , 'font-weight': '800'

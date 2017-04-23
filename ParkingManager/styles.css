@@ -1,6 +1,30 @@
 * {
     color: navajowhite;
+    font-family: Raleway;
+    padding: 0;
+    margin: 0;
+}
+
+.top {
+    position:relative;
+    height: 60px;
+    width: 100%;
+    border-bottom: solid 1px grey;
+    padding: 0 30px;
+}
+
+.top > h1 {
+    color: rgb(220,220,200);
+    line-height: 60px;
+}
+
+body { 
     background-color: rgb(30, 30, 30);
+
+}
+
+.headnote {
+    font-size: .8em;
 }
 
 .spot {
@@ -10,12 +34,21 @@
     margin: .2em;
 }
 
+.spotlabel-line {
+        text-align: center;
+
+}
 .display {
+    position:fixed;
+    bottom:30px;
+    right:0;
     visibility: hidden;
+    padding: 25px;
     float: right;
     width: 15em;
-    height: 15em;
+    height: 7em;
     transition: .5s;
+    background-color: rgba(10,50,10,.2);
 }
 
 .display.show {
@@ -23,20 +56,24 @@
     transition: .5s;
 }
 
-.spot:hover {}
-
 ul li {
     list-style: none;
 }
 
-.spot span {
-    content: "Just opened";
-}
-
-.spot span {
-    transform: scale(0);
-}
-
 .spot span .popup {
     transform: scale(1);
+}
+
+.time {
+    padding: 2px 5px 2px 5px;
+    border: 2px solid orange;
+}
+
+.timer {
+    display: inline-block;
+    font-family: Raleway;
+}
+.display>p, #spotlabel {
+    background-color: rgba(10,50,10,.1);
+
 }
