@@ -42,7 +42,7 @@ function addListeners(list) {
                     var spot = i + 1;
                     var timeV = timeVacant[i];
                     var timeP = timeParked[i];
-                    document.querySelector(".display").classList.add("show");
+                    document.querySelector("#display").classList.add("show");
                     document.querySelector("#spotlabel").innerHTML = spot;
                     if (vacant[i] == true) setClock(timeV);
                     else setClock(timeP);
@@ -52,21 +52,16 @@ function addListeners(list) {
     }
 }
 
-
 function setClock(time) {
     let onesSeconds = time % 10;
-    let tensSeconds = Math.floor((time % 60)/10);
-    
-    let minutes = (time/60) % 60;
-    let onesMinutes = Math.floor(minutes%10);
-    let tensMinutes = Math.floor(minutes/10);
-    
-    let hours = (time/3600) % 24;
-    let onesHours = Math.floor(hours%10);
-    let tensHours = Math.floor(hours/10);
-    
+    let tensSeconds = Math.floor((time % 60) / 10);
+    let minutes = (time / 60) % 60;
+    let onesMinutes = Math.floor(minutes % 10);
+    let tensMinutes = Math.floor(minutes / 10);
+    let hours = (time / 3600) % 24;
+    let onesHours = Math.floor(hours % 10);
+    let tensHours = Math.floor(hours / 10);
     let days = Math.floor(time / 86400);
-    
     document.querySelector(".o-sec").innerHTML = onesSeconds;
     document.querySelector(".t-sec").innerHTML = tensSeconds;
     document.querySelector(".o-min").innerHTML = onesMinutes;
@@ -74,23 +69,22 @@ function setClock(time) {
     document.querySelector(".o-hour").innerHTML = onesHours;
     document.querySelector(".t-hour").innerHTML = tensHours;
     document.querySelector(".days").innerHTML = days;
-
-    
 }
+
 function changeValues() {
     for (var i = 0; i < 3; i++) {
         var ran = (Math.floor(Math.random() * 20));
         var ranID = ran + 1;
         let _vacant = (Math.floor(Math.random() * 2));
         if (_vacant && timeVacant[ran] == 0) {
-//            (function () {
-//                document.getElementById(ranID).firstElementChild.classList.add("popup");
-//                (function (idd) {
-//                    window.setTimeout(function () {
-//                        document.getElementById(idd).firstElementChild.classList.remove("popup");
-//                    }, 1500);
-//                })(ranID);
-//            })();
+            //            (function () {
+            //                document.getElementById(ranID).firstElementChild.classList.add("popup");
+            //                (function (idd) {
+            //                    window.setTimeout(function () {
+            //                        document.getElementById(idd).firstElementChild.classList.remove("popup");
+            //                    }, 1500);
+            //                })(ranID);
+            //            })();
             timeVacant[ran] = 1;
             timeParked[ran] = 0;
             vacant[ran] = true;
@@ -155,4 +149,12 @@ function updateTime() {
 function start() {
     getData();
     updateParking();
+}
+$(document).scroll(function () {
+    checkOffset();
+});
+
+function checkOffset() {
+    if ($('#display').offset().top + $('#display').height() >= $('#foot').offset().top - 45) $('#display').css('position', 'absolute');
+    if ($(document).scrollTop() + window.innerHeight < $('#foot').offset().top) $('#display').css('position', 'fixed');
 }

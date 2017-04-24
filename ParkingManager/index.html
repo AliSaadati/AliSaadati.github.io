@@ -11,18 +11,14 @@
 <body>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <div class="top">
-            <h1>Parking Spotter</h1>
-    </div>
-
-    <div id="parkinginfo">
+        <h1>Parking Spotter</h1> </div>
+    <div class="dim">
         <p>***This is only a simulation; all values are randomly generated. </p>
-        
         <p>&nbsp;&nbsp;&nbsp; Each parking spot is displayed as either vacant or occupied. A real world implementation would involve hardware connected to a server to record and transmit data about the state of the given parking spots.***</p>
     </div>
-           <br/>
-            <p>Select a spot to get more details.</p>
-
-    <div class="display">
+    <br/>
+    <p>Select a spot to get more details.</p>
+    <div id="display">
         <p class="spotlabel-line">Parking Spot: <span id="spotlabel"></span></p>
         <p>days &nbsp; hours &nbsp;&nbsp; minutes &nbsp;seconds</p>
         <p class="timer">&nbsp; &nbsp;<span class="time days"></span> : <span class="time t-hour"></span> <span class="time o-hour"></span> : <span class="time t-min"></span> <span class="time o-min"></span> : <span class="time t-sec"></span> <span class="time o-sec"></span> </p>
@@ -91,7 +87,7 @@
         </li>
     </ul>
     <br>
-    <footer>System developed by Ali, Daniel, Keng, Omar</footer>
+    <footer id="foot" class="dim">System developed by Ali, Daniel, Keng, Omar</footer>
     <script src="jquery-3.1.0.js"></script>
     <script src="script.js"></script>
 </body>
