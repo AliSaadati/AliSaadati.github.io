@@ -5,88 +5,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Lato|Raleway|Cutive+Mono" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Parking Spotter | CS 596</title>
 </head>
 
 <body>
-    <link rel="stylesheet" type="text/css" href="styles.css">
     <div class="top">
         <h1>Parking Spotter</h1> </div>
     <div class="dim">
         <p>***This is only a simulation; all values are randomly generated. </p>
-        <p>&nbsp;&nbsp;&nbsp; Each parking spot is displayed as either vacant or occupied. A real world implementation would involve hardware connected to a server to record and transmit data about the state of the given parking spots.***</p>
+        <p style="padding-left: 20px;">Each parking spot is displayed as either vacant or occupied. A real world implementation would involve hardware connected to a server to record and transmit data about the state of the given parking spots.***</p>
     </div>
     <br/>
     <p>Select a spot to get more details.</p>
-    <div id="display">
-        <p class="spotlabel-line">Parking Spot: <span id="spotlabel"></span></p>
-        <p>days &nbsp; hours &nbsp;&nbsp; minutes &nbsp;seconds</p>
-        <p class="timer">&nbsp; &nbsp;<span class="time days"></span> : <span class="time t-hour"></span> <span class="time o-hour"></span> : <span class="time t-min"></span> <span class="time o-min"></span> : <span class="time t-sec"></span> <span class="time o-sec"></span> </p>
+    <br>
+    <div style="position: relative;">
+        <ul>
+            <li>
+                <div class="spot" id="1">Spot 1</div>
+            </li>
+            <li>
+                <div class="spot" id="2">Spot 2</div>
+            </li>
+            <li>
+                <div class="spot" id="3">Spot 3</div>
+            </li>
+            <li>
+                <div class="spot" id="4">Spot 4</div>
+            </li>
+            <li>
+                <div class="spot" id="5">Spot 5</div>
+            </li>
+            <li>
+                <div class="spot" id="6">Spot 6</div>
+            </li>
+            <li>
+                <div class="spot" id="7">Spot 7</div>
+            </li>
+            <li>
+                <div class="spot" id="8">Spot 8</div>
+            </li>
+            <li>
+                <div class="spot" id="9">Spot 9</div>
+            </li>
+            <li>
+                <div class="spot" id="10">Spot 10</div>
+            </li>
+            <li>
+                <div class="spot" id="11">Spot 11</div>
+            </li>
+            <li>
+                <div class="spot" id="12">Spot 12</div>
+            </li>
+            <li>
+                <div class="spot" id="13">Spot 13</div>
+            </li>
+            <li>
+                <div class="spot" id="14">Spot 14</div>
+            </li>
+            <li>
+                <div class="spot" id="15">Spot 15</div>
+            </li>
+            <li>
+                <div class="spot" id="16">Spot 16</div>
+            </li>
+            <li>
+                <div class="spot" id="17">Spot 17</div>
+            </li>
+            <li>
+                <div class="spot" id="18">Spot 18</div>
+            </li>
+            <li>
+                <div class="spot" id="19">Spot 19</div>
+            </li>
+            <li>
+                <div class="spot" id="20">Spot 20</div>
+            </li>
+        </ul>
+        <div id="display">
+            <p class="spotlabel-line">Parking Spot: <span id="spotlabel"></span></p>
+            <p>days &nbsp; hours &nbsp;&nbsp; minutes &nbsp;seconds</p><br/>
+            <p class="timer">&nbsp; &nbsp;<span class="time days"></span> : <span class="time t-hour"></span> <span class="time o-hour"></span> : <span class="time t-min"></span> <span class="time o-min"></span> : <span class="time t-sec"></span> <span class="time o-sec"></span> </p>
+        </div>
     </div>
-    <br>
-    <ul>
-        <li>
-            <div class="spot" id="1">Spot 1</div>
-        </li>
-        <li>
-            <div class="spot" id="2">Spot 2</div>
-        </li>
-        <li>
-            <div class="spot" id="3">Spot 3</div>
-        </li>
-        <li>
-            <div class="spot" id="4">Spot 4</div>
-        </li>
-        <li>
-            <div class="spot" id="5">Spot 5</div>
-        </li>
-        <li>
-            <div class="spot" id="6">Spot 6</div>
-        </li>
-        <li>
-            <div class="spot" id="7">Spot 7</div>
-        </li>
-        <li>
-            <div class="spot" id="8">Spot 8</div>
-        </li>
-        <li>
-            <div class="spot" id="9">Spot 9</div>
-        </li>
-        <li>
-            <div class="spot" id="10">Spot 10</div>
-        </li>
-        <li>
-            <div class="spot" id="11">Spot 11</div>
-        </li>
-        <li>
-            <div class="spot" id="12">Spot 12</div>
-        </li>
-        <li>
-            <div class="spot" id="13">Spot 13</div>
-        </li>
-        <li>
-            <div class="spot" id="14">Spot 14</div>
-        </li>
-        <li>
-            <div class="spot" id="15">Spot 15</div>
-        </li>
-        <li>
-            <div class="spot" id="16">Spot 16</div>
-        </li>
-        <li>
-            <div class="spot" id="17">Spot 17</div>
-        </li>
-        <li>
-            <div class="spot" id="18">Spot 18</div>
-        </li>
-        <li>
-            <div class="spot" id="19">Spot 19</div>
-        </li>
-        <li>
-            <div class="spot" id="20">Spot 20</div>
-        </li>
-    </ul>
-    <br>
     <footer id="foot" class="dim">System developed by Ali, Daniel, Keng, Omar</footer>
     <script src="jquery-3.1.0.js"></script>
     <script src="script.js"></script>

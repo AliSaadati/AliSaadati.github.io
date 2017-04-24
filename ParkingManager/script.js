@@ -155,6 +155,8 @@ $(document).scroll(function () {
 });
 
 function checkOffset() {
-    if ($('#display').offset().top + $('#display').height() >= $('#foot').offset().top - 45) $('#display').css('position', 'absolute');
-    if ($(document).scrollTop() + window.innerHeight < $('#foot').offset().top) $('#display').css('position', 'fixed');
+    if ($('#display').offset().top + $('#display').height()  >= $('#foot').offset().top - 45) 
+        $('#display').css('position', 'absolute');
+    if ($(document).scrollTop() + window.innerHeight < $('#foot').offset().top) 
+        $('#display').css('position', 'fixed');
 }
