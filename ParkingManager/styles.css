@@ -87,3 +87,15 @@ footer {
 .dim>p {
     color: rgb(100, 100, 100);
 }
+
+@media only screen and (max-width: 560px) {
+    #display {
+        left:0;
+        right:auto;
+        position: relative;
+    }
+}
+
+.main-display {
+    position: relative;
+}

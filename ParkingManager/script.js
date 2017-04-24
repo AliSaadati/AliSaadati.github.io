@@ -46,6 +46,9 @@ function addListeners(list) {
                     document.querySelector("#spotlabel").innerHTML = spot;
                     if (vacant[i] == true) setClock(timeV);
                     else setClock(timeP);
+                    disp = document.getElementById('display')
+                    if (window.innerWidth < 560) 
+                        list[i].appendChild(disp);  
                 }, 50);
             }, false);
         })(index);
@@ -155,8 +158,11 @@ $(document).scroll(function () {
 });
 
 function checkOffset() {
+    if (window.innerWidth > 560) {
+        if (!$('.main-display').children('#display')) $('.main-display').append('#display');
     if ($('#display').offset().top + $('#display').height()  >= $('#foot').offset().top - 45) 
         $('#display').css('position', 'absolute');
     if ($(document).scrollTop() + window.innerHeight < $('#foot').offset().top) 
         $('#display').css('position', 'fixed');
+    } else {$('#display').css('position', 'relative'); }
 }
