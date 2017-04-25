@@ -157,9 +157,9 @@ $(document).scroll(function () {
     checkOffset();
 });
 
-$('body').bind('touchmove', function() {
-    checkOffset();
-});
+//$('body').bind('touchmove', function() {
+//    checkOffset();
+//});
 
 $(window).resize(function () {
     checkOffset();
