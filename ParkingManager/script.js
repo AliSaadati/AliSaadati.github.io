@@ -156,6 +156,11 @@ function start() {
 $(document).scroll(function () {
     checkOffset();
 });
+
+$(window).bind('touchmove', function() {
+    checkOffset();
+});
+
 $(window).resize(function () {
     checkOffset();
 });
@@ -163,16 +168,13 @@ $(window).resize(function () {
 function checkOffset() {
     if (window.innerWidth >= 560) {
         if (!$('.main-display').children('#display')){
-            console.log($('.main-display').children('#display'));
             $('.main-display').append('#display');
         }
-        console.log(window.innerWidth);
         
         if ($('#display').offset().top + $('#display').height() >= $('#foot').offset().top - 45) $('#display').css('position', 'absolute');
         if ($(document).scrollTop() + window.innerHeight < $('#foot').offset().top) $('#display').css('position', 'fixed');
     }
     else {
         $('#display').css('position', 'relative');
-        console.log(window.innerWidth);
     }
 }
