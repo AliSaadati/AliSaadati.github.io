@@ -3,7 +3,7 @@ var timeParked = new Array();
 var timeVacant = new Array();
 var vacant = new Array();
 var set;
-
+/* Load data json file to populate initial parking spots */
 function getData() {
     $.ajax({
         async: false
@@ -32,7 +32,7 @@ window.setInterval(changeValues, 3500);
 window.setInterval(updateParking, 500);
 window.setInterval(updateTime, 1000);
 window.addListeners(hoverSpot);
-
+/* Click event handlers for each parking spot */
 function addListeners(list) {
     for (var index = 0; index < list.length; index++) {
         (function (i) {
@@ -54,7 +54,7 @@ function addListeners(list) {
         })(index);
     }
 }
-
+/* Set time to be displayed */
 function setClock(time) {
     let onesSeconds = time % 10;
     let tensSeconds = Math.floor((time % 60) / 10);
@@ -73,21 +73,13 @@ function setClock(time) {
     document.querySelector(".t-hour").innerHTML = tensHours;
     document.querySelector(".days").innerHTML = days;
 }
-
+/* Randomly change status of 3 parking spots */
 function changeValues() {
     for (var i = 0; i < 3; i++) {
         var ran = (Math.floor(Math.random() * 20));
         var ranID = ran + 1;
         let _vacant = (Math.floor(Math.random() * 2));
         if (_vacant && timeVacant[ran] == 0) {
-            //            (function () {
-            //                document.getElementById(ranID).firstElementChild.classList.add("popup");
-            //                (function (idd) {
-            //                    window.setTimeout(function () {
-            //                        document.getElementById(idd).firstElementChild.classList.remove("popup");
-            //                    }, 1500);
-            //                })(ranID);
-            //            })();
             timeVacant[ran] = 1;
             timeParked[ran] = 0;
             vacant[ran] = true;
@@ -99,7 +91,7 @@ function changeValues() {
         }
     }
 }
-
+/* Update view of parking spots in HTML */
 function updateParking() {
     var el;
     for (var i = 1; el = document.getElementById(i); i++) {
@@ -139,7 +131,7 @@ function updateParking() {
         }
     }
 }
-
+/* Update time of each parking spot */
 function updateTime() {
     for (var i in timeParked) {
         if (timeParked[i] > 0) timeParked[i]++;
@@ -148,45 +140,48 @@ function updateTime() {
         if (timeVacant[i] > 0) timeVacant[i]++;
     }
 }
-
+/* Updates position of display panel */
+function updateDisplay() {
+    // returns distance from element to top of document
+    var getElemDistance = function (display) {
+        var location = 0;
+        if (display.offsetParent) {
+            do {
+                location += display.offsetTop;
+                display = display.offsetParent;
+            } while (display);
+        }
+        return location >= 0 ? location : 0;
+    };
+    var display = document.getElementById("display");
+    var footer = document.getElementById("foot");
+    var footerOffset = footer.offsetTop;
+    var displayOffset = display.offsetTop;
+    var displayHeight = display.offsetHeight;
+    if (window.innerWidth >= 560) {
+        if (window.scrollY + window.innerHeight < footerOffset) display.style.position = "fixed";
+        else if (document.body.offsetHeight >= footerOffset) display.style.position = "absolute";
+    }
+    else display.style.position = "relative";
+    footerOffset = footer.offsetTop;
+    displayOffset = display.offsetTop;
+    displayHeight = display.offsetHeight;
+    if (window.innerWidth >= 560) {
+        if (window.scrollY + window.innerHeight < footerOffset) display.style.position = "fixed";
+        else if (document.body.offsetHeight >= footerOffset) display.style.position = "absolute";
+    }
+}
+/******************************************************/
 function start() {
     getData();
     updateParking();
 }
 $(document).scroll(function () {
-    checkOffset();
+    updateDisplay();
 });
 $('body').bind('touchmove', function () {
-    checkOffset();
+    updateDisplay();
 });
 $(window).resize(function () {
-    checkOffset();
+    updateDisplay();
 });
-
-function checkOffset() {
-    // returns distance from element to top of document
-    var getElemDistance = function (disp) {
-        var location = 0;
-        if (disp.offsetParent) {
-            do {
-                location += disp.offsetTop;
-                disp = disp.offsetParent;
-            } while (disp);
-        }
-        return location >= 0 ? location : 0;
-    };
-    var disp = document.getElementById("display");
-    var foot = document.getElementById("foot");
-    var fOffset = foot.offsetTop;
-    var dOffset = disp.offsetTop;
-    var dHeight = disp.offsetHeight;
-    if (window.innerWidth >= 560) {
-        if (window.pageYOffset + window.innerHeight + document.body.offsetHeight >= fOffset) {
-            $('#display').css('position', 'absolute');
-        }
-        if (window.scrollY + window.innerHeight < fOffset) $('#display').css('position', 'fixed');
-    }
-    else {
-        $('#display').css('position', 'relative');
-    }
-}

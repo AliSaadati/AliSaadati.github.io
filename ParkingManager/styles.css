@@ -43,8 +43,8 @@ body {
     right: 0px;
     visibility: hidden;
     padding: 25px;
-    width: 15em;
-    height: 100px;
+    width: 20em;
+    height: 6em;
     transition: .5s;
     background-color: rgba(10, 50, 10, .2);
     -webkit-transform: translateZ(0);
@@ -101,7 +101,6 @@ footer {
     #display {
         right: 0;
         bottom: 0;
-        position: absolute;
     }
 }
 
