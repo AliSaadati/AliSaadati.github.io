@@ -3,6 +3,7 @@ var timeParked = new Array();
 var timeVacant = new Array();
 var vacant = new Array();
 var set;
+var clickFlag = false;
 /* Load data json file to populate initial parking spots */
 function getData() {
     $.ajax({
@@ -42,7 +43,10 @@ function addListeners(list) {
                     var spot = i + 1;
                     var timeV = timeVacant[i];
                     var timeP = timeParked[i];
-                    document.querySelector("#display").classList.add("show");
+                    if (!clickFlag) {
+                        document.querySelector("#display").classList.add("show");
+                        clickFlag = true;
+                    }
                     document.querySelector("#spotlabel").innerHTML = spot;
                     if (vacant[i] == true) setClock(timeV);
                     else setClock(timeP);
