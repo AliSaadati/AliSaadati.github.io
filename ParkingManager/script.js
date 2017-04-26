@@ -51,7 +51,6 @@ function addListeners(list) {
                     if (vacant[i] == true) setClock(timeV);
                     else setClock(timeP);
                     disp = document.getElementById('display');
-                    main = document.getElementsByClassName('main-display');
                     list[i].appendChild(disp);
                 }, 50);
             }, false);
@@ -106,13 +105,6 @@ function updateParking() {
             $(el).click(function () {
                 $(this).css({
                     'color': 'rgb(100,150,250)'
-                    , 'font-weight': '800'
-                });
-            })
-            $(el).mouseout(function () {
-                $(this).css({
-                    'color': 'rgb(0,250,0)'
-                    , 'font-weight': '400'
                 });
             })
         }
@@ -123,13 +115,6 @@ function updateParking() {
             $(el).click(function () {
                 $(this).css({
                     'color': 'rgb(150,15,0)'
-                    , 'font-weight': '800'
-                });
-            })
-            $(el).mouseout(function () {
-                $(this).css({
-                    'color': 'rgb(255,40,40)'
-                    , 'font-weight': '400'
                 });
             })
         }
