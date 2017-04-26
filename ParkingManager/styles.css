@@ -57,6 +57,7 @@ body {
 
 ul li {
     list-style: none;
+    overflow-x: hidden;
 }
 
 .spot span .popup {
@@ -95,8 +96,8 @@ footer {
         right: auto;
         position: relative;
         padding: 20px;
+        margin: 0;
         width: 100%;
-        overflow-x: hidden;
         height: 6em;
         transition: .5s;
         background-color: rgba(200, 200, 200, .2);
