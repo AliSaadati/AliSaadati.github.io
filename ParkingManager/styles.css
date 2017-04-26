@@ -90,17 +90,17 @@ footer {
 
 @media only screen and (max-width: 559px) {
     #display {
-        left:0;
-        right:auto;
+        left: 0;
+        right: auto;
         position: relative;
     }
 }
 
-@media only screen and  (min-width: 560px){
+@media only screen and (min-width: 560px) {
     #display {
-        right:0;
-        bottom:0;
-        position:absolute;
+        right: 0;
+        bottom: 0;
+        position: absolute;
     }
 }
 

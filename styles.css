@@ -252,7 +252,7 @@ div.menu div.strokes {
 
 #projects {
     height: auto;
-    background-image: url(Code_BG_nomark.jpg);
+    background-image: url(Code_BG.jpg);
 }
 
 #projects .project-heading {
@@ -271,10 +271,12 @@ div.menu div.strokes {
     box-sizing: border-box;
     width: 400px;
     height: 400px;
-    border-width: 3px;
+    /*
+    border-width: 0px;
     border-style: solid;
-    border-color: lightgoldenrodyellow;
-    border-radius: 230px;
+    border-color: lightslategrey;
+    border-radius: 10px;
+*/
     -webkit-filter: blur(1px);
     -webkit-transform: translate3d(0, 0, 0);
     filter: grayscale(1) blur(1px);

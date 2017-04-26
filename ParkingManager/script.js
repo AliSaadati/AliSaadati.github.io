@@ -49,7 +49,6 @@ function addListeners(list) {
                     disp = document.getElementById('display');
                     main = document.getElementsByClassName('main-display');
                     if (window.innerWidth < 560) list[i].appendChild(disp);
-                    else main[0].appendChild(disp);
                 }, 50);
             }, false);
         })(index);
@@ -157,15 +156,16 @@ function start() {
 $(document).scroll(function () {
     checkOffset();
 });
-//$('body').bind('touchmove', function() {
-//    checkOffset();
-//});
+$('body').bind('touchmove', function () {
+    checkOffset();
+});
 $(window).resize(function () {
     checkOffset();
 });
 
 function checkOffset() {
-        var getElemDistance = function (disp) {
+    // returns distance from element to top of document
+    var getElemDistance = function (disp) {
         var location = 0;
         if (disp.offsetParent) {
             do {
@@ -175,21 +175,13 @@ function checkOffset() {
         }
         return location >= 0 ? location : 0;
     };
-    
     var disp = document.getElementById("display");
     var foot = document.getElementById("foot");
     var fOffset = foot.offsetTop;
-    var dOffset = getElemDistance(disp);
+    var dOffset = disp.offsetTop;
     var dHeight = disp.offsetHeight;
-    console.log("fOffset : " + fOffset);
-    console.log("dHeight : " + dHeight);
-    console.log("dOffset : " + dOffset);
-    console.log("window innerwidth : " + window.innerWidth);
-    console.log("should be absolute " + (dOffset + dHeight >= fOffset));
-    console.log("should be fixed " + (window.scrollY + window.innerHeight < fOffset));
     if (window.innerWidth >= 560) {
-        if (!$('.main-display').children('#display')) $('.main-display').append('#display');
-        if (dOffset + dHeight >= fOffset) {
+        if (window.pageYOffset + window.innerHeight + document.body.offsetHeight >= fOffset) {
             $('#display').css('position', 'absolute');
         }
         if (window.scrollY + window.innerHeight < fOffset) $('#display').css('position', 'fixed');
