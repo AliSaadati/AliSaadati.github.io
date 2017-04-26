@@ -42,6 +42,8 @@ function addListeners(list) {
                     var spot = i + 1;
                     var timeV = timeVacant[i];
                     var timeP = timeParked[i];
+                    if (window.innerWidth >= 560) document.querySelector(".spotlabel-line").classList.add("show");
+                    else document.querySelector(".spotlabel-line").classList.add("remove");
                     document.querySelector("#display").classList.add("show");
                     document.querySelector("#spotlabel").innerHTML = spot;
                     if (vacant[i] == true) setClock(timeV);

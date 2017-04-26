@@ -29,12 +29,13 @@ body {
 .spot {
     cursor: pointer;
     display: inline-block;
-    padding: .4em;
-    margin: .2em;
+    padding: 1em 0;
 }
 
 .spotlabel-line {
-    text-align: center;
+    position: fixed;
+    left: 0;
+    top: 0;
 }
 
 #display {
@@ -50,14 +51,24 @@ body {
     -webkit-transform: translateZ(0);
 }
 
-#display.show {
+#display.show,
+.show {
     visibility: visible;
     transition: .5s;
+}
+
+.remove {
+    display: none;
+}
+
+ul {
+    margin: 0;
 }
 
 ul li {
     list-style: none;
     overflow-x: hidden;
+    margin: 0;
 }
 
 .spot span .popup {
@@ -93,12 +104,10 @@ footer {
 @media only screen and (max-width: 559px) {
     #display {
         left: 0;
-        right: auto;
         position: relative;
-        padding: 20px;
         margin: 0;
         width: 100%;
-        height: 6em;
+        height: 4em;
         transition: .5s;
         background-color: rgba(200, 200, 200, .2);
     }
@@ -112,5 +121,9 @@ footer {
 }
 
 .main-display {
+    position: relative;
+}
+
+.inner-display {
     position: relative;
 }
