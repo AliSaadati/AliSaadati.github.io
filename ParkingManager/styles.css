@@ -87,9 +87,10 @@ ul li {
 }
 
 footer {
-    height: 100px;
+    height: 20px;
     border-top: solid grey 1px;
-    line-height: 100px;
+    padding: 20px 0 20px 10px;
+    font-size: .7em;
 }
 
 .dim,
