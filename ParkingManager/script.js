@@ -48,7 +48,7 @@ function addListeners(list) {
                     else setClock(timeP);
                     disp = document.getElementById('display');
                     main = document.getElementsByClassName('main-display');
-                    if (window.innerWidth < 560) list[i].appendChild(disp);
+                    list[i].appendChild(disp);
                 }, 50);
             }, false);
         })(index);
