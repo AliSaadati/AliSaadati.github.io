@@ -47,6 +47,7 @@ body {
     height: 100px;
     transition: .5s;
     background-color: rgba(10, 50, 10, .2);
+    -webkit-transform: translateZ(0);
 }
 
 #display.show {
@@ -106,5 +107,4 @@ footer {
 
 .main-display {
     position: relative;
-    -webkit-transform: translate3d(0, 0, 0);
 }
