@@ -46,9 +46,10 @@ function addListeners(list) {
                     document.querySelector("#spotlabel").innerHTML = spot;
                     if (vacant[i] == true) setClock(timeV);
                     else setClock(timeP);
-                    disp = document.getElementById('display')
-                    if (window.innerWidth < 560) 
-                        list[i].appendChild(disp);  
+                    disp = document.getElementById('display');
+                    main = document.getElementsByClassName('main-display');
+                    if (window.innerWidth < 560) list[i].appendChild(disp);
+                    else main[0].appendChild(disp);
                 }, 50);
             }, false);
         })(index);
@@ -156,23 +157,42 @@ function start() {
 $(document).scroll(function () {
     checkOffset();
 });
-
 //$('body').bind('touchmove', function() {
 //    checkOffset();
 //});
-
 $(window).resize(function () {
     checkOffset();
 });
 
 function checkOffset() {
-    if (window.innerWidth >= 560) {
-        if (!$('.main-display').children('#display')){
-            $('.main-display').append('#display');
+        var getElemDistance = function (disp) {
+        var location = 0;
+        if (disp.offsetParent) {
+            do {
+                location += disp.offsetTop;
+                disp = disp.offsetParent;
+            } while (disp);
         }
-        
-        if ($('#display').offset().top + $('#display').height() >= $('#foot').offset().top - 45) $('#display').css('position', 'absolute');
-        if ($(document).scrollTop() + window.innerHeight < $('#foot').offset().top) $('#display').css('position', 'fixed');
+        return location >= 0 ? location : 0;
+    };
+    
+    var disp = document.getElementById("display");
+    var foot = document.getElementById("foot");
+    var fOffset = foot.offsetTop;
+    var dOffset = getElemDistance(disp);
+    var dHeight = disp.offsetHeight;
+    console.log("fOffset : " + fOffset);
+    console.log("dHeight : " + dHeight);
+    console.log("dOffset : " + dOffset);
+    console.log("window innerwidth : " + window.innerWidth);
+    console.log("should be absolute " + (dOffset + dHeight >= fOffset));
+    console.log("should be fixed " + (window.scrollY + window.innerHeight < fOffset));
+    if (window.innerWidth >= 560) {
+        if (!$('.main-display').children('#display')) $('.main-display').append('#display');
+        if (dOffset + dHeight >= fOffset) {
+            $('#display').css('position', 'absolute');
+        }
+        if (window.scrollY + window.innerHeight < fOffset) $('#display').css('position', 'fixed');
     }
     else {
         $('#display').css('position', 'relative');
