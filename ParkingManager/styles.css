@@ -106,4 +106,5 @@ footer {
 
 .main-display {
     position: relative;
+    -webkit-transform: translate3d(0, 0, 0);
 }
