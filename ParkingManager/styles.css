@@ -27,6 +27,7 @@ body {
 }
 
 .spot {
+    width: 100%;
     cursor: pointer;
     display: inline-block;
     padding: 1em 0;

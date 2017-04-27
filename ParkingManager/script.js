@@ -147,6 +147,7 @@ function updateDisplay() {
     var footerOffset = footer.offsetTop;
     var displayOffset = display.offsetTop;
     var displayHeight = display.offsetHeight;
+    console.log(window.scrollY);
     if (window.innerWidth >= 560) {
         if (window.scrollY + window.innerHeight < footerOffset) display.style.position = "fixed";
         else if (document.body.offsetHeight >= footerOffset) display.style.position = "absolute";
