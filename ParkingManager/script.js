@@ -175,3 +175,12 @@ $('body').bind('touchmove', function () {
 $(window).resize(function () {
     updateDisplay();
 });
+
+
+
+        
+       
+            
+            
+
+        
