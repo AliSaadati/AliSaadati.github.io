@@ -6,6 +6,11 @@
     box-sizing: border-box;
 }
 
+body {
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
 
 /***** Navigation Bar *****/
 
@@ -16,10 +21,11 @@
 .navbar {
     position: fixed;
     width: 100%;
-    height: 60px;
-    background-color: rgba(80, 80, 80, .85);
+    max-width: 1500px;
+    height: 50px;
+    background-color: rgba(80, 80, 80, .75);
     z-index: 2;
-    border-bottom: 1px solid rgb(150, 150, 150);
+    /*    box-shadow: -1px 1px 100px;*/
 }
 
 .navbar > ul {
@@ -31,13 +37,12 @@
 
 .navbar li a {
     text-decoration: none;
-    font-size: 1.5em;
-    line-height: 60px;
+    font-size: 1.05em;
+    line-height: 50px;
     display: block;
-    padding: 0 15px;
+    padding: 0 10px;
     color: lightyellow;
-    font-family: 'Josefin Sans', sans-serif;
-    border-left: 1px solid rgb(150, 150, 150);
+    font-family: "Raleway", sans-serif;
 }
 
 .navbar > ul>li {
@@ -45,7 +50,7 @@
 }
 
 .navbar > ul>li:last-child a {
-    border-right: 1px solid rgb(150, 150, 150);
+    /*    border-right: 1px solid rgb(150, 150, 150);*/
 }
 
 .navbar > ul li li {
@@ -54,20 +59,17 @@
 }
 
 .navbar > ul li li a {
-    border: 1px solid rgb(150, 150, 150);
     border-top: none;
-    height: 60px;
+    height: 50px;
 }
 
-.navbar > ul li ul li:first-child a {
-    border-top: 1px solid rgb(150, 150, 150);
-}
+.navbar > ul li ul li:first-child a {}
 
 .navbar > ul ul {
     position: absolute;
-    top: 59px;
-    background-color: rgba(80, 80, 80, .8);
-    box-shadow: -10px 20px 30px;
+    top: 50px;
+    background-color: rgba(80, 80, 80, .75);
+    /*    box-shadow: -10px 20px 30px;*/
 }
 
 .navbar > ul li:hover li {
@@ -75,14 +77,15 @@
 }
 
 .navbar li a:hover {
-    background-color: rgb(150, 6, 6);
+    background-color: rgb(10, 140, 160);
     box-sizing: border-box;
     transition: .2s;
+    /*    box-shadow: -1px 1px 5px black;*/
 }
 
 .logo {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     display: block;
     animation: pulse .7s 1;
 }
@@ -91,25 +94,33 @@
     max-height: 100%;
     max-width: 100%;
     border-radius: 30px;
-    border: 2px solid rgb(150, 150, 150);
+    opacity: .7;
+    transition: .25s;
+}
+
+.logo img:hover {
+    opacity: .9;
+    transition: .25s;
+    cursor: pointer;
+    box-shadow: -1px 2px 5px;
 }
 
 .logoOffset {
     width: 60px;
-    height: 60px;
+    height: 50px;
     float: right;
 }
 
 div.menu {
     position: relative;
-    width: 25px;
+    width: 20px;
     height: 20px;
     float: left;
-    margin: 20px 0 0px 17px;
+    margin: 18px 0 0px 15px;
 }
 
 .hamburger {
-    width: 60px;
+    width: 50px;
     height: 100%;
     float: left;
     transition: .2s;
@@ -119,13 +130,13 @@ div.menu {
 }
 
 .hamburger:hover {
-    background-color: rgb(150, 6, 6);
+    background-color: rgb(10, 140, 160);
 }
 
 div.menu div.strokes {
     width: 100%;
-    height: 3px;
-    margin: 0 0 5px 0;
+    height: 2px;
+    margin: 0 0 4px 0;
     background: lightyellow;
     transition: transform 0.3s, opacity 0.1s;
 }
@@ -136,21 +147,21 @@ div.menu div.strokes {
 }
 
 .animate0 {
-    transform: rotate(45deg) translateY(7px) translateX(7px);
+    transform: rotate(45deg) translateY(5px) translateX(5px);
 }
 
 .animate2 {
-    transform: rotate(-45deg) translateY(-5px) translateX(4px);
+    transform: rotate(-45deg) translateY(-4px) translateX(3px);
 }
 
 .dropdown {
     position: absolute;
-    background-color: rgba(80, 80, 80, .8);
-    top: 60px;
-    width: 200px;
+    background-color: rgba(80, 80, 80, .75);
+    top: 50px;
+    width: auto;
     visibility: hidden;
     opacity: 0;
-    transition: .35s;
+    transition: .25s;
     box-shadow: -10px 15px 30px;
 }
 
@@ -160,13 +171,9 @@ div.menu div.strokes {
 }
 
 .dropdown ul li a {
-    line-height: .8em;
-    padding: .8em;
     float: none;
     display: block;
     text-align: left;
-    border-bottom: 1px solid rgb(150, 150, 150);
-    border-right: 1px solid rgb(150, 150, 150);
 }
 
 .dropdown ul li {
@@ -182,13 +189,12 @@ div.menu div.strokes {
 }
 
 #dropdown-r+ul li a {
-    background-color: rgba(10, 10, 10, .4);
+    background-color: rgba(10, 10, 10, .2);
     text-indent: 12px;
-    line-height: 0em;
 }
 
 #dropdown-r+ul li a:hover {
-    background-color: rgb(150, 6, 6);
+    background-color: rgb(10, 160, 180);
 }
 
 #dropdown-r::after {
@@ -205,9 +211,12 @@ div.menu div.strokes {
 /****** Content > Title *****/
 
 .title {
-    position: relative;
     height: 700px;
-    background-image: url(mountain.jpg);
+    position: relative;
+    background-image: url(wave.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1500px 700px;
     text-align: center;
 }
 
@@ -218,22 +227,24 @@ div.menu div.strokes {
     left: 0;
     right: 0;
     margin: auto;
-    color: lightgoldenrodyellow;
+    color: whitesmoke;
+    opacity: 1;
 }
 
 .slab {
-    font-size: 9em;
+    font-size: 7em;
     margin-bottom: 30px;
-    font-family: 'Rammetto One', cursive;
+    font-family: "Alfa Slab One", cursive;
     line-height: .9;
-    text-shadow: -3px .06em 1px black;
+    text-shadow: 0px 0px 200px rgb(10, 120, 160);
+    font-stretch:
 }
 
 .script {
-    font-size: 7em;
-    font-family: Brush, cursive;
+    font-size: 5em;
+    font-family: "Lobster", cursive;
     line-height: .8;
-    text-shadow: -5px 5px black;
+    text-shadow: 0px 0px 40px rgb(10, 120, 160);
 }
 
 
@@ -454,10 +465,10 @@ div.menu div.strokes {
         visibility: visible;
     }
     .script {
-        font-size: 4em;
+        font-size: 3.5em;
     }
     .slab {
-        font-size: 4.5em;
+        font-size: 4em;
     }
     .title {
         height: 600px;
