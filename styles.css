@@ -207,7 +207,7 @@ div.menu div.strokes {
 .title {
     position: relative;
     height: 700px;
-    background-image: url(Background_blue.png);
+    background-image: url(mountain.jpg);
     text-align: center;
 }
 
@@ -224,7 +224,7 @@ div.menu div.strokes {
 .slab {
     font-size: 9em;
     margin-bottom: 30px;
-    font-family: 'Coda', cursive;
+    font-family: 'Rammetto One', cursive;
     line-height: .9;
     text-shadow: -3px .06em 1px black;
 }
