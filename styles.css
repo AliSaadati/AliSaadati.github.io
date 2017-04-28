@@ -19,7 +19,7 @@
     height: 50px;
     background-color: rgba(80, 80, 80, .75);
     z-index: 2;
-/*    box-shadow: -1px 1px 100px;*/
+    /*    box-shadow: -1px 1px 100px;*/
 }
 
 .navbar > ul {
@@ -44,7 +44,7 @@
 }
 
 .navbar > ul>li:last-child a {
-/*    border-right: 1px solid rgb(150, 150, 150);*/
+    /*    border-right: 1px solid rgb(150, 150, 150);*/
 }
 
 .navbar > ul li li {
@@ -57,27 +57,24 @@
     height: 50px;
 }
 
-.navbar > ul li ul li:first-child a {
-}
+.navbar > ul li ul li:first-child a {}
 
 .navbar > ul ul {
     position: absolute;
     top: 50px;
     background-color: rgba(80, 80, 80, .75);
-/*    box-shadow: -10px 20px 30px;*/
+    /*    box-shadow: -10px 20px 30px;*/
 }
 
 .navbar > ul li:hover li {
     display: block;
-
 }
 
 .navbar li a:hover {
     background-color: rgb(10, 140, 160);
     box-sizing: border-box;
     transition: .2s;
-/*    box-shadow: -1px 1px 5px black;*/
-
+    /*    box-shadow: -1px 1px 5px black;*/
 }
 
 .logo {
@@ -101,6 +98,7 @@
     cursor: pointer;
     box-shadow: -1px 2px 5px;
 }
+
 .logoOffset {
     width: 60px;
     height: 50px;
@@ -209,7 +207,7 @@ div.menu div.strokes {
 .title {
     position: relative;
     height: 700px;
-    background-image: url(Background_blue.png);
+    background-image: url(mountain.jpg);
     text-align: center;
 }
 
