@@ -24,7 +24,7 @@ body {
     max-width: 1500px;
     height: 50px;
     background-color: rgba(80, 80, 80, .75);
-    z-index: 2;
+    z-index: 6;
     /*    box-shadow: -1px 1px 100px;*/
 }
 
@@ -218,6 +218,7 @@ div.menu div.strokes {
     background-position: center;
     background-size: 1500px 700px;
     text-align: center;
+    z-index: 5;
 }
 
 .titlecontainer {
