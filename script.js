@@ -65,6 +65,19 @@ document.addEventListener('click', function(event) {
   if(!hasParent)
     closeHamburger();
 });
+ 
+document.addEventListener('touchstart', function(event) {
+   var hasParent = false;
+    for(var node = event.target; node != document.body; node = node.parentNode)
+    {
+      if(node.className == 'navbar'){
+        hasParent = true;
+        break;
+      }
+    }
+  if(!hasParent)
+    closeHamburger();
+});
 
 
 
