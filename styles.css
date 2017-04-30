@@ -234,10 +234,11 @@ div.menu div.strokes {
 
 .slab {
     font-size: 7em;
-    margin-bottom: 10px;
+    padding-bottom: 15px;
     font-family: "Passion One", cursive;
     line-height: .65;
     text-shadow: 0px 0px 200px rgb(10, 120, 160);
+    transform: scaleY(1.2);
 }
 
 .script {
@@ -245,17 +246,20 @@ div.menu div.strokes {
     font-family: "Lobster", cursive;
     line-height: .8;
     text-shadow: 0px 0px 40px rgb(10, 120, 160);
+    transform: scaleY(1.2);
 }
 
 
 /****** Content > About ******/
 
 #about p {
-    height:auto;
+/*    height:auto;*/
     padding: 50px;
     font-family: 'Josefin Sans', sans-serif;
+/*
     line-height: 1.5;
     box-sizing: border-box;
+*/
 }
 
 
@@ -263,14 +267,19 @@ div.menu div.strokes {
 
 #projects {
     height: auto;
-    background-image: url(Code_BG.jpg);
+/*    background-image: url(Code_BG.jpg);*/
+    background-color: rgba(10,90,110,.7);
 }
 
 #projects .project-heading {
-    color: lightgoldenrodyellow;
+    color: whitesmoke;
+    font-family: "Lobster";
     text-align: center;
-    line-height: 2em;
+    line-height: 1em;
     font-size: 4em;
+    padding-bottom: .5em;
+    text-shadow: 0px 0px 10px rgb(10, 120, 160);
+
 }
 
 #projects .project {
@@ -296,8 +305,6 @@ div.menu div.strokes {
     overflow: hidden;
 }
 
-#projects .projects-container {}
-
 #projects .project-wrapper {
     position: relative;
     display: inline-flex;
@@ -306,7 +313,7 @@ div.menu div.strokes {
 }
 
 #projects .project:hover>span {
-    transform: scale(1.15, 1.45);
+    transform: scale(1.15, 2.45);
     background-color: rgba(200, 200, 200, .4);
     -webkit-filter: blur(0px);
     /*    Anti-aliasing effect*/
@@ -315,17 +322,18 @@ div.menu div.strokes {
 #projects .project>span {
     position: absolute;
     background-color: rgba(150, 150, 150, .4);
-    top: 55%;
     left: 0;
+    bottom:0;
     right: 0;
     width: 100%;
     text-align: center;
     line-height: .7em;
-    font-size: 2em;
+    font-size: 1em;
     transition: .2s ease-out;
     color: lightgoldenrodyellow;
     text-shadow: -1px 1px 6px black;
     padding: .7em 0;
+    font-family: "Raleway", sans-serif;
 }
 
 #projects .project:hover {
@@ -445,6 +453,16 @@ div.menu div.strokes {
 
 /***** Responsive Design *****/
 
+/*----- Very Small Mobile -----*/
+@media screen and (max-width: 384px) {
+    div.script {
+        font-size: 2em;
+    }
+    
+    div.slab { 
+        font-size: 3em;
+    }
+}
 
 /*----- Mobile -----*/
 
@@ -468,6 +486,7 @@ div.menu div.strokes {
     }
     .slab {
         font-size: 4em;
+        padding-bottom: 15px;
     }
     .title {
         height: 600px;
@@ -525,7 +544,11 @@ div.menu div.strokes {
         margin: 0 -2px;
     }
 }
-
+@media screen and (max-width: 1107px) {
+    .slab {
+/*        padding-bottom: 10px;*/
+    }
+}
 
 /*----- Large Desktop -----*/
 
