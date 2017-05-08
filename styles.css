@@ -308,12 +308,6 @@ div.menu div.strokes {
     box-sizing: border-box;
     width: 400px;
     height: 400px;
-    /*
-    border-width: 0px;
-    border-style: solid;
-    border-color: lightslategrey;
-    border-radius: 10px;
-*/
     -webkit-filter: blur(1px);
     -webkit-transform: translate3d(0, 0, 0);
     filter: grayscale(1) blur(1px);
@@ -331,31 +325,41 @@ div.menu div.strokes {
 }
 
 #projects .project:hover>span {
-    transform: scale(1.15, 2.45);
-    background-color: rgba(200, 200, 200, .4);
+    transform:translateY(-70px);
+    background-color: white;
     -webkit-filter: blur(0px);
     /*    Anti-aliasing effect*/
 }
 
 #projects .project>span {
     position: absolute;
-    background-color: rgba(150, 150, 150, .4);
+    background-color: white;
     left: 0;
-    bottom:0;
+    bottom:-70px;
     right: 0;
     width: 100%;
     text-align: center;
-    line-height: .7em;
+    line-height: 1em;
     font-size: 1em;
     transition: .2s ease-out;
-    color: lightgoldenrodyellow;
-    text-shadow: -1px 1px 6px black;
+    color: black;
     padding: .7em 0;
-    font-family: "Raleway", sans-serif;
+    font-family: "Josefin Sans", sans-serif;
 }
 
-#projects .project:hover {
+.project-bg {
+    background-color: white;
+    position:relative;
+    height: 400px;
+    width:400px;
+}
+
+.bg-wrapper {
+    position: absolute;
+}
+#projects .project-bg:hover > .project{
     filter: grayscale(0) blur(0px);
+    transform:translate(30px, 30px);
 }
 
 #projects .plm {
@@ -369,7 +373,6 @@ div.menu div.strokes {
 #projects .it {
     background-image: url(images/Inventory_Tracker.png);
 }
-
 
 /***** Content > Contact *****/
 
@@ -411,6 +414,16 @@ div.menu div.strokes {
 }
 
 
+p.foot-text {
+    text-align: center;
+    margin-top: -30px;
+    padding: 10px 0px 10px 0px;
+    font-size: .7em;
+}
+
+p strong {
+    font-size: inherit;
+}
 /***** Animations *****/
 
 @keyframes pulse {

@@ -66,7 +66,7 @@ document.addEventListener('click', function(event) {
     closeHamburger();
 });
  
-document.addEventListener('touchstart', function(event) {
+document.addEventListener('touchend', function(event) {
    var hasParent = false;
     for(var node = event.target; node != document.body; node = node.parentNode)
     {
