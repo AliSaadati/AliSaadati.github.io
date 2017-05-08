@@ -354,8 +354,12 @@ div.menu div.strokes {
     width:400px;
 }
 
-.bg-wrapper {
+#projects .bg-wrapper {
     position: absolute;
+    height:400px;
+    width:400px;
+    left:0;
+    right:0;
 }
 #projects .project-bg:hover > .project{
     filter: grayscale(0) blur(0px);
