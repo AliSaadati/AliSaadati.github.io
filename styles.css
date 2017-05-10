@@ -76,8 +76,8 @@ body {
     display: block;
 }
 
-.navbar > ul li ul li a:hover {
-}
+.navbar > ul li ul li a:hover {}
+
 .navbar li a:hover {
     background-color: rgba(10, 140, 160, .3);
     box-sizing: border-box;
@@ -132,7 +132,6 @@ div.menu {
     cursor: pointer;
 }
 
-
 .hamburger:hover {
     background-color: rgba(10, 140, 160, .3);
 }
@@ -166,7 +165,6 @@ div.menu div.strokes {
     visibility: hidden;
     opacity: 0;
     transition: .25s;
-
 }
 
 .show {
@@ -177,14 +175,15 @@ div.menu div.strokes {
 .dropdown {
     width: 100%;
 }
+
 .dropdown ul li a {
     float: none;
     display: block;
     text-align: left;
     line-height: 3;
-    padding-left:20px;
-/*    border-bottom: rgba(20, 20, 20, .3) 1.5px solid;*/
-    border-top: rgba(250,250,250, .1) 1px solid;
+    padding-left: 20px;
+    /*    border-bottom: rgba(20, 20, 20, .3) 1.5px solid;*/
+    border-top: rgba(250, 250, 250, .1) 1px solid;
     font-size: 12px;
 }
 
@@ -192,9 +191,11 @@ div.menu div.strokes {
     background-color: rgba(10, 140, 160, .3);
     color: lightgray;
 }
-.dropdown ul li:last-child a{
-    border-bottom: rgba(250,250,250, .1) 1px solid;
+
+.dropdown ul li:last-child a {
+    border-bottom: rgba(250, 250, 250, .1) 1px solid;
 }
+
 .dropdown ul li {
     position: relative;
 }
@@ -253,8 +254,7 @@ div.menu div.strokes {
     line-height: .65;
     text-shadow: 0px 0px 200px rgb(10, 120, 160);
     transform: scaleY(1.2);
-    transition: .5s; 
-
+    transition: .5s;
 }
 
 .script {
@@ -263,18 +263,17 @@ div.menu div.strokes {
     line-height: .8;
     text-shadow: 0px 0px 40px rgb(10, 120, 160);
     transform: scaleY(1.2);
-    transition: .5s; 
-
+    transition: .5s;
 }
 
 
 /****** Content > About ******/
 
 #about p {
-/*    height:auto;*/
+    /*    height:auto;*/
     padding: 50px;
     font-family: 'Josefin Sans', sans-serif;
-/*
+    /*
     line-height: 1.5;
     box-sizing: border-box;
 */
@@ -285,8 +284,8 @@ div.menu div.strokes {
 
 #projects {
     height: auto;
-/*    background-image: url(Code_BG.jpg);*/
-    background-color: rgba(10,90,110,.7);
+    background-color: rgba(10, 90, 110, .7);
+    /*    background-image: url(Code_BG.jpg);*/
 }
 
 #projects .project-heading {
@@ -297,23 +296,18 @@ div.menu div.strokes {
     font-size: 4em;
     padding-bottom: .5em;
     text-shadow: 0px 0px 10px rgb(10, 120, 160);
-
 }
 
 #projects .project {
     position: absolute;
-    left: 0;
-    right: 0;
-    margin: 0px auto;
     box-sizing: border-box;
     width: 400px;
     height: 400px;
     -webkit-filter: blur(1px);
     -webkit-transform: translate3d(0, 0, 0);
     filter: grayscale(1) blur(1px);
-    transition: .15s ease-out;
+    transition: .2s ease-out;
     cursor: pointer;
-    background-size: cover;
     overflow: hidden;
 }
 
@@ -322,10 +316,11 @@ div.menu div.strokes {
     display: inline-flex;
     width: 100%;
     height: 500px;
+    text-align: center;
 }
 
 #projects .project:hover>span {
-    transform:translateY(-70px);
+    transform: translateY(-70px);
     background-color: white;
     -webkit-filter: blur(0px);
     /*    Anti-aliasing effect*/
@@ -335,7 +330,7 @@ div.menu div.strokes {
     position: absolute;
     background-color: white;
     left: 0;
-    bottom:-70px;
+    bottom: -70px;
     right: 0;
     width: 100%;
     text-align: center;
@@ -349,21 +344,20 @@ div.menu div.strokes {
 
 .project-bg {
     background-color: white;
-    position:relative;
+    position: relative;
     height: 400px;
-    width:400px;
+    width: 400px;
 }
 
 #projects .bg-wrapper {
-    position: absolute;
-    height:400px;
-    width:400px;
-    left:0;
-    right:0;
+    position: relative;
+    height: 500px;
+    width: inherit;
 }
-#projects .project-bg:hover > .project{
+
+#projects .project-bg:hover > .project {
     filter: grayscale(0) blur(0px);
-    transform:translate(30px, 30px);
+    transform: translate(30px, 60px);
 }
 
 #projects .plm {
@@ -377,6 +371,7 @@ div.menu div.strokes {
 #projects .it {
     background-image: url(images/Inventory_Tracker.png);
 }
+
 
 /***** Content > Contact *****/
 
@@ -417,7 +412,6 @@ div.menu div.strokes {
     animation: surface 1.3s linear 1 forwards;
 }
 
-
 p.foot-text {
     text-align: center;
     margin-top: -30px;
@@ -428,6 +422,8 @@ p.foot-text {
 p strong {
     font-size: inherit;
 }
+
+
 /***** Animations *****/
 
 @keyframes pulse {
@@ -488,19 +484,20 @@ p strong {
 
 /***** Responsive Design *****/
 
+
 /*----- Very Small Mobile -----*/
+
 @media screen and (max-width: 384px) {
     div.script {
         font-size: 2em;
-        transition: .5s; 
+        transition: .5s;
     }
-    
-    div.slab { 
+    div.slab {
         font-size: 3.5em;
-        transition: .5s; 
-
+        transition: .5s;
     }
 }
+
 
 /*----- Mobile -----*/
 
@@ -521,14 +518,12 @@ p strong {
     }
     .script {
         font-size: 2.5em;
-        transition: .5s; 
-
+        transition: .5s;
     }
     .slab {
         font-size: 4em;
         padding-bottom: 15px;
-        transition: .5s; 
-
+        transition: .5s;
     }
     .title {
         height: 600px;
@@ -586,11 +581,13 @@ p strong {
         margin: 0 -2px;
     }
 }
+
 @media screen and (max-width: 1107px) {
     .slab {
-/*        padding-bottom: 10px;*/
+        /*        padding-bottom: 10px;*/
     }
 }
+
 
 /*----- Large Desktop -----*/
 
