@@ -284,11 +284,7 @@ div.menu div.strokes {
 
 #projects {
     height: auto;
-    <<<<<<< HEAD background-color: rgba(10, 90, 110, .7);
-    /*    background-image: url(Code_BG.jpg);*/
-    =======/*    background-image: url(Code_BG.jpg);*/
-    background-color: rgba(10, 90, 110, .7);
-    >>>>>>> 954c72d146fddaa31fd317b5eda1a865466097bc
+    background-color: rgba(10, 90, 110, .4);
 }
 
 #projects .project-heading {
@@ -298,69 +294,54 @@ div.menu div.strokes {
     line-height: 1em;
     font-size: 4em;
     padding-bottom: .5em;
-    text-shadow: 0px 0px 10px rgb(10, 120, 160);
+    text-shadow: 0px 0px 10px rgba(10, 120, 160, .4);
+}
+
+#projects .projects-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px -35px;
+}
+
+#projects .project-wrapper {
+    /*    position: relative;*/
+    height: 400px;
+    width: 350px;
+    margin: 20px 35px;
+}
+
+#projects .bg-wrapper {
+    height: 350px;
+    width: 350px;
+}
+
+#projects .project-bg {
+    background-color: white;
+    position: relative;
+    height: 350px;
+    width: 349px;
+    /*    border: 1px solid rgba(10, 90, 110, .7);*/
+    transition: .2s ease-out;
 }
 
 #projects .project {
     position: absolute;
     box-sizing: border-box;
-    width: 400px;
-    height: 400px;
-    -webkit-filter: blur(1px);
+    width: 350px;
+    height: 350px;
     -webkit-transform: translate3d(0, 0, 0);
-    filter: grayscale(1) blur(1px);
+    filter: grayscale(1);
     transition: .2s ease-out;
     cursor: pointer;
     overflow: hidden;
-}
-
-#projects .project-wrapper {
-    position: relative;
-    display: inline-flex;
-    width: 100%;
-    height: 500px;
-    text-align: center;
-}
-
-#projects .project:hover>span {
-    transform: translateY(-70px);
-    background-color: white;
-    -webkit-filter: blur(0px);
-    /*    Anti-aliasing effect*/
-}
-
-#projects .project>span {
-    position: absolute;
-    background-color: white;
-    left: 0;
-    bottom: -70px;
-    right: 0;
-    width: 100%;
-    text-align: center;
-    line-height: 1em;
-    font-size: 1em;
-    transition: .2s ease-out;
-    color: black;
-    padding: .7em 0;
-    font-family: "Josefin Sans", sans-serif;
-}
-
-.project-bg {
-    background-color: white;
-    position: relative;
-    height: 400px;
-    width: 400px;
-}
-
-#projects .bg-wrapper {
-    position: relative;
-    height: 500px;
-    width: inherit;
+    background-size: contain;
 }
 
 #projects .project-bg:hover > .project {
-    filter: grayscale(0) blur(0px);
-    transform: translate(30px, 60px);
+    filter: grayscale(0);
+    /*    transform: translate(60px, 60px);*/
 }
 
 #projects .plm {
@@ -373,6 +354,39 @@ div.menu div.strokes {
 
 #projects .it {
     background-image: url(images/Inventory_Tracker.png);
+}
+
+#projects .project>.text-contain {
+    position: absolute;
+    background-color: rgba(10, 120, 160, .4);
+    bottom: -70px;
+    width: 100%;
+    height: 60px;
+    transition: .15s cubic-bezier(.8, .4, .73, .77);
+    color: white;
+    padding: 0 0px;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+#projects .project-bg:hover .text-contain {
+    transform: translateY(-70px);
+    background-color: rgba(70, 70, 70, .9);
+    color: white;
+    -webkit-filter: blur(0px);
+    transition: .1s cubic-bezier(.8, .4, .83, .77);
+    /*    Anti-aliasing effect*/
+}
+
+#projects .project .project-name {
+    position: absolute;
+    top: 0px;
+    font-size: .6em;
+}
+
+#projects .project .project-desc {
+    font-size: .7em;
+    padding: 5px;
+    color: rgb(150, 150, 150);
 }
 
 
@@ -533,11 +547,17 @@ p strong {
     }
     #projects .project {
         filter: none;
-        width: 300px;
-        height: 300px;
+        width: 250px;
+        height: 250px;
+    }
+    #projects .projects-container {
+        display: block;
     }
     #projects .project-wrapper {
-        height: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        height: 350px;
+        width: 250px;
     }
     #projects .project:hover>span {
         transform: scale(1.0, 1.0);
@@ -548,21 +568,39 @@ p strong {
         transition: .25s ease-out;
     }
     #projects .project:hover {
-        tranform: none;
+        transform: none;
     }
     #projects .bg-wrapper {
-        height: 300px;
-        width: 300px;
+        height: 250px;
+        width: 250px;
     }
     #projects .project-bg {
-        height: 300px;
-        width: 300px
+        height: 250px;
+        width: 250px
     }
-    #projects .project-bg>.project {
-        tranform: none;
+    #projects .project-bg:hover>.project,
+    #projects .project-bg:hover>.project .text-contain {
+        transform: none;
+    }
+    #projects .project>span {
+        bottom: 0;
+        line-height: 1em;
+        font-size: .8em;
     }
     #contact ul li .media:hover {
         transform: none;
+    }
+    #projects .project .text-contain {
+        transform: translateY(-50px);
+        background-color: rgba(70, 70, 70, .9);
+        -webkit-filter: blur(0px);
+        /*    Anti-aliasing effect*/
+    }
+    #projects .project .project-desc {
+        font-size: .5em;
+        position: absolute;
+        top: 15px;
+        color: rgb(150, 150, 150);
     }
 }
 
@@ -588,25 +626,11 @@ p strong {
 
 /*----- Larger Than Tablet -----*/
 
-@media screen and (min-width: 900px) {
-    #projects .project-wrapper {
-        width: 50%;
-        margin: 0 -2px;
-    }
-}
+@media screen and (min-width: 900px) {}
 
-@media screen and (max-width: 1107px) {
-    .slab {
-        /*        padding-bottom: 10px;*/
-    }
-}
+@media screen and (max-width: 1107px) {}
 
 
 /*----- Large Desktop -----*/
 
-@media screen and (min-width: 1300px) {
-    #projects .project-wrapper {
-        width: 33%;
-        margin: 0 -2px;
-    }
-}
+@media screen and (min-width: 1300px) {}
