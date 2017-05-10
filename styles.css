@@ -284,8 +284,11 @@ div.menu div.strokes {
 
 #projects {
     height: auto;
-    background-color: rgba(10, 90, 110, .7);
+    <<<<<<< HEAD background-color: rgba(10, 90, 110, .7);
     /*    background-image: url(Code_BG.jpg);*/
+    =======/*    background-image: url(Code_BG.jpg);*/
+    background-color: rgba(10, 90, 110, .7);
+    >>>>>>> 954c72d146fddaa31fd317b5eda1a865466097bc
 }
 
 #projects .project-heading {
@@ -529,7 +532,7 @@ p strong {
         height: 600px;
     }
     #projects .project {
-        filter: grayscale(0) blur(0px);
+        filter: none;
         width: 300px;
         height: 300px;
     }
@@ -538,15 +541,25 @@ p strong {
     }
     #projects .project:hover>span {
         transform: scale(1.0, 1.0);
-        background-color: rgba(150, 150, 150, .4);
+        background-color: white;
     }
     #projects .project>span {
-        font-size: 1.7em;
+        font-size: 1em;
         transition: .25s ease-out;
     }
     #projects .project:hover {
-        width: 300px;
+        tranform: none;
+    }
+    #projects .bg-wrapper {
         height: 300px;
+        width: 300px;
+    }
+    #projects .project-bg {
+        height: 300px;
+        width: 300px
+    }
+    #projects .project-bg>.project {
+        tranform: none;
     }
     #contact ul li .media:hover {
         transform: none;
