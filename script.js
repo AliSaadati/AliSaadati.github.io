@@ -2,7 +2,8 @@
     var strokes = document.querySelectorAll(".strokes")
         , icon = document.querySelector(".hamburger")
         , dropdownmenu = document.querySelector(".dropdown")
-        , dropdownResume = document.querySelector("#dropdown-r");
+        , dropdownResume = document.querySelector("#dropdown-r")
+        , resumeChevron = document.querySelector(".chevron");
     var mq = window.matchMedia("(min-width: 710px)");
 
     function toggleHamburger() {
@@ -16,6 +17,7 @@
     }
 
     function closeHamburger() {
+        resumeChevron.innerHTML = "&#x2228;";
         dropdownmenu.classList.remove("show");
         dropdownResume.nextElementSibling.classList.remove("show-rsm");
         strokes[0].classList.remove("animate0");
@@ -31,6 +33,8 @@
 
         function dropdownResumeCheck() {
             dropdownResume.nextElementSibling.classList.toggle("show-rsm");
+            if (dropdownResume.nextElementSibling.classList.contains("show-rsm")) resumeChevron.innerHTML = "&#x2227;";
+            else resumeChevron.innerHTML = "&#x2228;";
         }
         window.addEventListener("resize", menuCheck);
         icon.addEventListener("click", toggleHamburger);
@@ -51,38 +55,26 @@
             }
         }
     };
-
-
-document.addEventListener('click', function(event) {
-   var hasParent = false;
-    for(var node = event.target; node != document.body; node = node.parentNode)
-    {
-      if(node.className == 'navbar'){
-        hasParent = true;
-        break;
-      }
-    }
-  if(!hasParent)
-    closeHamburger();
-});
- 
-document.addEventListener('touchend', function(event) {
-   var hasParent = false;
-    for(var node = event.target; node != document.body; node = node.parentNode)
-    {
-      if(node.className == 'navbar'){
-        hasParent = true;
-        break;
-      }
-    }
-  if(!hasParent)
-    closeHamburger();
-});
-
-
-
-
-
+    document.addEventListener('click', function (event) {
+        var hasParent = false;
+        for (var node = event.target; node != document.body; node = node.parentNode) {
+            if (node.className == 'navbar') {
+                hasParent = true;
+                break;
+            }
+        }
+        if (!hasParent) closeHamburger();
+    });
+    document.addEventListener('touchend', function (event) {
+        var hasParent = false;
+        for (var node = event.target; node != document.body; node = node.parentNode) {
+            if (node.className == 'navbar') {
+                hasParent = true;
+                break;
+            }
+        }
+        if (!hasParent) closeHamburger();
+    });
     //$('p').each(function(){
     //            
     //            var p = $(this),

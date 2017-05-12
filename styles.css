@@ -208,9 +208,18 @@ div.menu div.strokes {
     height: 0px;
 }
 
+.dropdown ul li a {
+    text-align: center;
+}
+
+.dropdown ul li a span {
+    line-height: inherit;
+    font-size: inherit;
+    background-color: rgba(1,1,1, .1);
+}
+
 #dropdown-r+ul li a {
     background-color: rgba(10, 10, 10, .2);
-    text-indent: 8px;
 }
 
 #dropdown-r+ul li a:hover {
@@ -228,6 +237,7 @@ div.menu div.strokes {
 .title {
     height: 700px;
     position: relative;
+    background-color: rgb(10, 100, 120);
     background-image: url(wave.jpg);
     background-repeat: no-repeat;
     background-position: center;
@@ -373,7 +383,7 @@ div.menu div.strokes {
     background-color: rgba(70, 70, 70, .9);
     color: white;
     -webkit-filter: blur(0px);
-    transition: .1s cubic-bezier(.8, .4, .83, .77);
+    transition: .1s cubic-bezier(.8, .4, .73, .67);
     /*    Anti-aliasing effect*/
 }
 
