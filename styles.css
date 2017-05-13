@@ -243,14 +243,14 @@ color: rgba(10, 140, 160, .7);
 
 #dropdown-r span.chevron {
     position: absolute;
-    transition: .15s;
+    transition: .1s;
     line-height: 1.5;
     font-size: 2em;
 }
 
 #dropdown-r span.rotate {
     position: absolute;
-    transition: 1s;
+    transition: .2s;
     transform: rotate(90deg);
     /* Safari */
     -webkit-transform: rotate(90deg);
