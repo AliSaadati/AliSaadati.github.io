@@ -17,7 +17,7 @@ function toggleHamburger() {
 }
 /***** Close Mobile Menu *****/
 function closeHamburger() {
-    resumeChevron.innerHTML = "&#x2228;";
+    resumeChevron.classList.remove("rotate");    
     dropdownmenu.classList.remove("show");
     dropdownResume.nextElementSibling.classList.remove("show-rsm");
     strokes[0].classList.remove("animate0");
@@ -33,8 +33,8 @@ function menuCheck() {
 /***** Check if resume from dropdown is selected *****/
 function dropdownResumeCheck() {
     dropdownResume.nextElementSibling.classList.toggle("show-rsm");
-    if (dropdownResume.nextElementSibling.classList.contains("show-rsm")) resumeChevron.innerHTML = "&#x2227;";
-    else resumeChevron.innerHTML = "&#x2228;";
+    if (dropdownResume.nextElementSibling.classList.contains("show-rsm")) resumeChevron.classList.add("rotate");
+    else resumeChevron.classList.remove("rotate");
 }
 /***** Check if element is descendent of navbar *****/
 function navbarDescendent(event) {
