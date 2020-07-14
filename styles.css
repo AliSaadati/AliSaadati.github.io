@@ -199,7 +199,7 @@ div.menu div.strokes {
     font-size: 12px;
 }
 
-    color: rgba(10, 140, 160, .7);
+    /* color: rgba(10, 140, 160, .7); */
 
 .dropdown ul li a:hover {
     background-color: rgba(10, 140, 160, .3);
@@ -366,7 +366,7 @@ div.menu div.strokes {
 }
 
 #projects .plm {
-    background-image: url(images/Parking_Structure-crop-right.png);
+    background-image: url("https://www.camzcakery.com/images/cupcake-chocolate.jpg");
 }
 
 #projects .gi {
